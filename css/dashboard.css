@@ -1,0 +1,96 @@
+.dashboard-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 ستون */
+    gap: 20px;
+    grid-auto-rows: auto;
+}
+
+/* KPI Cards */
+.kpi-row {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; }
+.card-value { font-size: 1.8rem; font-weight: bold; margin-bottom: 5px; }
+.card-action { font-size: 0.85rem; margin-top: 15px; font-weight: bold; cursor: pointer;}
+
+.text-danger { color: var(--danger); }
+.text-primary { color: var(--primary); }
+.text-warning { color: var(--warning); }
+
+/* Chart Section */
+.chart-widget {
+    grid-column: span 2; /* دو ستون فضا می‌گیرد */
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--radius);
+    min-height: 300px;
+}
+.chart-placeholder {
+    height: 200px;
+    background: #f9fafb;
+    border: 2px dashed #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+/* Quick Actions & Feed */
+.quick-actions, .activity-feed {
+    grid-column: span 1;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.action-btn:hover { background: #e5e7eb; }
+.action-btn i { font-size: 1.2rem; margin-bottom: 8px; color: var(--primary); }
+
+.feed-item {
+    border-right: 2px solid #e5e7eb;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.feed-item::before {
+    content: ''; position: absolute; right: -5px; top: 0;
+    width: 8px; height: 8px; border-radius: 50%; background: var(--primary);
+}
+.feed-text { font-size: 0.9rem; margin-bottom: 4px; }
+.feed-time { font-size: 0.75rem; color: var(--text-muted); }
