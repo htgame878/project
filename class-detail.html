@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>جزئیات کلاس</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/class-detail.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="breadcrumb" id="breadcrumb-area">
+            </div>
+
+        <div style="margin-bottom: 20px;">
+            <h1 style="color: var(--text-main);">کلاس ۱۰۱ - ریاضی</h1>
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" data-target="students-tab">
+                <i class="fa-solid fa-users"></i> دانش‌آموزان
+            </button>
+            <button class="tab-btn" data-target="exams-tab">
+                <i class="fa-solid fa-file-signature"></i> آزمون‌ها
+            </button>
+        </div>
+
+        <div id="students-tab" class="tab-content active">
+            <div class="student-list" id="students-list">
+                </div>
+        </div>
+
+        <div id="exams-tab" class="tab-content">
+            <div class="exams-grid" id="exams-grid">
+                </div>
+            
+            <div style="margin-top: 30px; text-align: center;">
+                <button class="card add-card" style="width: 100%; border: 2px dashed #ddd; background:none; cursor:pointer;">
+                    <i class="fa-solid fa-plus" style="font-size: 1.5rem; margin-bottom: 10px;"></i>
+                    افزودن آزمون جدید
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div id="report-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">کارنامه آزمون</h3>
+                <button class="close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+    
+    <script>
+        // تابع بستن مودال (ساده و سراسری)
+        function closeModal() {
+            document.getElementById('report-modal').classList.remove('open');
+        }
+        // بستن با کلیک روی فضای خالی
+        document.getElementById('report-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'report-modal') closeModal();
+        });
+    </script>
+    <script src="js/layout.js"></script> <script type="module" src="js/class-detail.js"></script>
+</body>
+</html>

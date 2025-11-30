@@ -3,19 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Dashboard</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <link rel="stylesheet" href="./css/classes.css">
-
+    <title>EduAI - سیستم هوشمند مدارس</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
-    <div id="app" class="app-container">
-        </div>
 
-    <script type="module" src="./js/main.js"></script>
+    <nav class="landing-navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fa-solid fa-brain text-primary"></i> 
+                <span>EduAI</span>
+            </a>
+    
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+    
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#features" class="nav-link">ویژگی‌ها</a></li>
+                    <li><a href="#about" class="nav-link">درباره ما</a></li>
+                    <li><a href="#contact" class="nav-link">تماس</a></li>
+                </ul>
+                <a href="dashboard.html" class="btn btn-primary nav-btn">ورود به پنل</a>
+            </div>
+            
+            <div class="nav-overlay" id="nav-overlay"></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">نسخه جدید هوش مصنوعی</span>
+                <h1>تحول در آموزش با <span class="text-primary">دستیار هوشمند</span></h1>
+                <p>
+                    پلتفرم جامع مدیریت کلاس، طراحی آزمون و تحلیل پیشرفت تحصیلی با قدرت AI. 
+                    تمرکز شما روی تدریس، تحلیل داده‌ها با ما.
+                </p>
+                <div class="hero-actions">
+                    <a href="dashboard.html" class="btn btn-primary btn-lg">
+                        شروع کنید <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <a href="#features" class="btn btn-outline btn-lg">بیشتر بدانید</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="abstract-shape">
+                    <i class="fa-solid fa-graduation-cap big-icon"></i>
+                    <div class="floating-card card-1">
+                        <i class="fa-solid fa-check-circle text-success"></i> آزمون ساخته شد
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fa-solid fa-chart-line text-primary"></i> رشد ۳۰٪ نمرات
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="section-features">
+        <div class="container">
+            <div class="section-title">
+                <h2>چرا EduAI؟</h2>
+                <p>ابزارهایی که هر معلمی به آن نیاز دارد</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box bg-blue">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>طراحی آزمون با AI</h3>
+                    <p>فقط مبحث را انتخاب کنید، هوش مصنوعی در چند ثانیه سوالات استاندارد طرح می‌کند.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-box bg-purple">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3>تحلیل دقیق عملکرد</h3>
+                    <p>شناسایی نقاط ضعف و قوت هر دانش‌آموز با نمودارهای پیشرفته و پیشنهاد تمرین.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-box bg-green">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <h3>مدیریت آسان کلاس</h3>
+                    <p>ایمپورت لیست از اکسل، گروه‌بندی خودکار و ثبت نمرات با ویس و عکس.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; ۲۰۲۵ EduAI. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+    <script src="./js/index.js" ></script>
 </body>
 </html>
