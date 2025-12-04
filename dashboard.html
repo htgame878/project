@@ -2,22 +2,128 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>داشبورد معلم</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد مدیریت</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <div class="main-content">
-        <h1>👋 سلام، به داشبورد خوش آمدید</h1>
-        <p>از منوی سمت راست برای دسترسی به بخش‌ها استفاده کنید.</p>
-        
-        <div class="grid-container">
-            <div class="card card-blue">
-                <h3>وضعیت کلی</h3>
-                <p>همه چیز خوب پیش می‌رود.</p>
+        <header class="top-header">
+            <div>
+                <h1>داشبورد مدیریت</h1>
+                <p class="date-display">امروز: سه‌شنبه، ۱۴ آذر ۱۴۰۲</p>
             </div>
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge-dot"></span></button>
+                <a href="settings.html" class="icon-btn"><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </header>
+
+        <div class="dashboard-layout">
+            
+            <main class="dashboard-main">
+                <div class="kpi-grid">
+                    <div class="kpi-card purple">
+                        <div class="kpi-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="kpi-info">
+                            <h3>کلاس‌های فعال</h3>
+                            <span>۴ کلاس</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card blue">
+                        <div class="kpi-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="kpi-info">
+                            <h3>کل دانش‌آموزان</h3>
+                            <span>۱۲۰ نفر</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card green">
+                        <div class="kpi-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="kpi-info">
+                            <h3>آزمون‌های تصحیح شده</h3>
+                            <span>۱۲ آزمون</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-box">
+                    <div class="section-header">
+                        <h3>دسترسی سریع</h3>
+                    </div>
+                    <div class="shortcuts-grid">
+                        <a href="classes.html" class="shortcut-card">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                            <span>مدیریت کلاس‌ها</span>
+                        </a>
+                        <a href="#" class="shortcut-card">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>طراحی آزمون (AI)</span>
+                        </a>
+                        <a href="#" class="shortcut-card">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <span>گزارش‌گیری</span>
+                        </a>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="dashboard-side">
+                
+                <div class="profile-widget">
+                    <div class="pw-header">
+                        <img src="assets/images/teachers/sina_beri.jpg" 
+                             onerror="this.src='https://ui-avatars.com/api/?name=Sina+Beri'" 
+                             class="pw-avatar">
+                        <div class="pw-info">
+                            <h4>محمد سینا بری</h4>
+                            <span class="pw-role">معلم ریاضی</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pw-stats">
+                        <div class="pws-item">
+                            <strong>۰۱</strong>
+                            <span>کلاس‌ها</span>
+                        </div>
+                        <div class="pws-item border-right">
+                            <strong>۱۰</strong>
+                            <span>دانش‌آموز</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="pw-actions">
+                        <a href="#" class="pw-btn">
+                            <div class="btn-icon"><i class="fa-regular fa-calendar"></i></div>
+                            <div class="btn-text">
+                                <span>برنامه هفتگی</span>
+                                <small>مشاهده زمان‌بندی</small>
+                            </div>
+                            <i class="fa-solid fa-chevron-left arrow"></i>
+                        </a>
+
+                        <a href="classes.html" class="pw-btn">
+                            <div class="btn-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                            <div class="btn-text">
+                                <span>لیست کلی شاگردان</span>
+                                <small>مدیریت و جستجو</small>
+                            </div>
+                            <i class="fa-solid fa-chevron-left arrow"></i>
+                        </a>
+                    </div>
+                </div>
+
+               
+
+            </aside>
+
         </div>
     </div>
+    
 
     <script src="js/layout.js"></script>
 </body>
