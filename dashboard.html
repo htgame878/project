@@ -71,54 +71,98 @@
             </main>
 
             <aside class="dashboard-side">
-                
+    
                 <div class="profile-widget">
+                    
                     <div class="pw-header">
-                        <img src="assets/images/teachers/sina_beri.jpg" 
-                             onerror="this.src='https://ui-avatars.com/api/?name=Sina+Beri'" 
-                             class="pw-avatar">
+                        <div class="avatar-container">
+                            <img src="assets/images/teachers/sina_beri.jpg" 
+                                 onerror="this.src='https://ui-avatars.com/api/?name=Mohammad+Sina+Beri&background=0ea5e9&color=fff'" 
+                                 class="pw-avatar" alt="محمد سینا بری">
+                            
+                            <a href="settings.html" class="edit-profile-btn" title="ویرایش پروفایل">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </div>
+                        
                         <div class="pw-info">
                             <h4>محمد سینا بری</h4>
-                            <span class="pw-role">معلم ریاضی</span>
+                            <span class="pw-role">معلم زبان انگلیسی</span>
+                        </div>
+                    </div>
+            
+                    <div class="current-school-box">
+                        <div class="school-label">مدرسه فعال:</div>
+                        
+                        <div class="school-selector" onclick="openSchoolModal()">
+                            <span id="active-school-name">مدرسه شهید بهشتی</span>
+                            <i class="fa-solid fa-arrows-rotate change-icon"></i>
+                        </div>
+                    </div>
+                    <div class="digital-id-card">
+                        <div class="id-row">
+                            <div class="id-icon bg-indigo"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="id-content">
+                                <span class="id-label">تحصیلات</span>
+                                <span class="id-value">کارشناس زبان انگلیسی</span>
+                            </div>
+                        </div>
+                    
+                        <div class="dashed-line"></div>
+                    
+                        <div class="id-row copy-row" onclick="copyToClipboard('36021649')">
+                            <div class="id-icon bg-blue"><i class="fa-solid fa-id-badge"></i></div>
+                            <div class="id-content">
+                                <span class="id-label">کد پرسنلی</span>
+                                <span class="id-value font-num">36021649</span>
+                            </div>
+                            <i class="fa-regular fa-copy copy-icon"></i>
+                        </div>
+                    
+                        <div class="id-row copy-row" onclick="copyToClipboard('181072881')">
+                            <div class="id-icon bg-emerald"><i class="fa-solid fa-fingerprint"></i></div>
+                            <div class="id-content">
+                                <span class="id-label">کد ملی</span>
+                                <span class="id-value font-num">181072881</span>
+                            </div>
+                            <i class="fa-regular fa-copy copy-icon"></i>
                         </div>
                     </div>
                     
+                    <div id="toast-msg" class="toast-hidden">کپی شد!</div>
+                    
+                    
+                    <div class="divider"></div>
+            
                     <div class="pw-stats">
                         <div class="pws-item">
-                            <strong>۰۱</strong>
+                            <strong>۰۴</strong>
                             <span>کلاس‌ها</span>
                         </div>
                         <div class="pws-item border-right">
-                            <strong>۱۰</strong>
+                            <strong>۱۲۰</strong>
                             <span>دانش‌آموز</span>
                         </div>
                     </div>
-
-                    <div class="divider"></div>
-
+            
                     <div class="pw-actions">
-                        <a href="#" class="pw-btn">
+                        <a href="schedule.html" class="pw-btn">
                             <div class="btn-icon"><i class="fa-regular fa-calendar"></i></div>
                             <div class="btn-text">
                                 <span>برنامه هفتگی</span>
-                                <small>مشاهده زمان‌بندی</small>
                             </div>
                             <i class="fa-solid fa-chevron-left arrow"></i>
                         </a>
-
-                        <a href="classes.html" class="pw-btn">
+            
+                        <a href="all-students.html" class="pw-btn">
                             <div class="btn-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
                             <div class="btn-text">
-                                <span>لیست کلی شاگردان</span>
-                                <small>مدیریت و جستجو</small>
+                                <span>لیست شاگردان</span>
                             </div>
                             <i class="fa-solid fa-chevron-left arrow"></i>
                         </a>
                     </div>
                 </div>
-
-               
-
             </aside>
 
         </div>

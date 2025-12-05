@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات آزمون</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exams.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container-narrow">
+            <div class="page-header-simple">
+                <a href="exams-step2.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                <h1>بارگذاری و جزئیات آزمون</h1>
+            </div>
+
+            <div class="upload-zone" id="uploadZone">
+                <i class="fa-solid fa-cloud-arrow-up fa-3x" style="margin-bottom:15px"></i>
+                <h3 id="uploadText">افزودن فایل آزمون</h3>
+                <span id="fileName" style="font-size:0.8rem; margin-top:5px; direction:ltr;"></span>
+                <input type="file" id="fileInput" hidden accept=".pdf,.docx,.jpg">
+            </div>
+
+            <button class="btn-ai inactive" id="btnAI" disabled>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span id="btnAiText">منتظر بارگذاری فایل...</span>
+            </button>
+
+            <div class="form-section">
+                <div class="section-title">اطلاعات تکمیلی آزمون</div>
+                
+                <div class="input-group">
+                    <label class="input-label">عنوان آزمون</label>
+                    <input type="text" class="input-control" placeholder="مثلاً: آزمون فصل دوم ریاضی">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">تعداد سوالات</label>
+                    <input type="number" class="input-control">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">سطح کلی سوالات</label>
+                    <select class="input-control">
+                        <option value="low">پایین‌تر از سطح کتاب</option>
+                        <option value="mid" selected>هم‌سطح کتاب</option>
+                        <option value="high">فراتر از سطح کتاب (پیشرفته)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">انواع سوالات</label>
+                    <div class="tags-container" id="questionTypes">
+                        <div class="tag-item" onclick="toggleTag(this)">تستی</div>
+                        <div class="tag-item" onclick="toggleTag(this)">تشریحی</div>
+                        <div class="tag-item" onclick="toggleTag(this)">کوتاه پاسخ</div>
+                        <div class="tag-item" onclick="toggleTag(this)">صحیح/غلط</div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%; margin: 16px 0;">
+                    <button class="add-btn" onclick="alert('آزمون اضلفه شد.')">
+                        افزودن آزمون
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="sticky-footer">
+        <button class="btn-performance" onclick="alert('هدایت به صفحه تحلیل عملکرد...')">
+            <i class="fa-solid fa-chart-simple"></i>
+            عملکرد آزمون
+        </button>
+    </div>
+
+    <script src="js/exams.js"></script>
+    <script src="js/layout.js"></script>
+</body>
+</html>

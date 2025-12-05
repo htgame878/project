@@ -110,3 +110,104 @@
 .event-item:last-child { border: none; }
 .event-time { font-size: 0.85rem; font-weight: bold; color: var(--primary); }
 .event-title { font-size: 0.85rem; color: #475569; }
+/* css/dashboard.css */
+
+/* کانتینر کارت دیجیتال */
+.digital-id-card {
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* ردیف‌های اطلاعات */
+.id-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+/* آیکون‌ها */
+.id-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.bg-indigo { background: #e0e7ff; color: #4f46e5; }
+.bg-blue   { background: #dbeafe; color: #2563eb; }
+.bg-emerald{ background: #d1fae5; color: #059669; }
+
+/* متن‌ها */
+.id-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.id-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 2px;
+}
+
+.id-value {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #334155;
+}
+
+/* فونت اعداد انگلیسی و خوانا */
+.font-num {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* خط جداکننده */
+.dashed-line {
+    border-bottom: 1px dashed #e2e8f0;
+    margin: 8px 0;
+}
+
+/* استایل حالت کپی (Copy Row) */
+.copy-row {
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px; /* کمی پدینگ بیشتر برای ناحیه کلیک */
+    transition: 0.2s;
+    position: relative;
+}
+
+.copy-row:hover {
+    background-color: #f1f5f9;
+}
+
+.copy-icon {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: 0.3s;
+}
+
+.copy-row:hover .copy-icon {
+    opacity: 1;
+    transform: translateX(0);
+    color: #64748b;
+}
+
+/* Toast (پیام کپی شد) */
+.toast-hidden {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(50px);
+    background: #333; color: white; padding: 8px 20px; border-radius: 20px;
+    font-size: 0.8rem; opacity: 0; transition: 0.3s; z-index: 9999;
+}
+.toast-visible { transform: translateX(-50%) translateY(0); opacity: 1; }

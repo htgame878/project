@@ -149,3 +149,76 @@ export const studentReports = {
       ]
   }
 };
+
+// js/store.js
+
+// ... (دیتای قبلی) ...
+
+// لیست کلاس‌هایی که معلم دارد (برای انتخاب در مودال)
+export const availableClasses = [
+    { id: "c_101", name: "ریاضی دهم A", location: "کلاس ۱۰۱" },
+    { id: "c_102", name: "فیزیک یازدهم B", location: "کلاس ۲۰۳" },
+    { id: "c_103", name: "هندسه دوازدهم", location: "کلاس ۳۰۵" },
+    { id: "free", name: "ساعت آزاد / مطالعه", location: "دفتر معلمان" }
+];
+
+// داده‌های برنامه هفتگی (شنبه تا پنج‌شنبه)
+// هر روز آرایه‌ای از 3 اسلات دارد. null یعنی خالی.
+export const weeklyScheduleData = {
+    "sat": [
+        { class_id: "c_101", name: "ریاضی دهم A", location: "کلاس ۱۰۱" }, // زنگ ۱
+        null, // زنگ ۲ خالی
+        { class_id: "c_102", name: "فیزیک یازدهم B", location: "کلاس ۲۰۳" } // زنگ ۳
+    ],
+    "sun": [null, null, null],
+    "mon": [
+        null,
+        { class_id: "c_103", name: "هندسه دوازدهم", location: "کلاس ۳۰۵" },
+        null
+    ],
+    "tue": [null, null, null],
+    "wed": [null, null, null],
+    "thu": [null, null, null]
+};
+
+// js/store.js
+
+// ... (دیتای قبلی) ...
+
+export const allStudentsData = [
+    { id: "st_1", row_number: 1, full_name: "آرمان کریمی", grade_label: "دهم", grade_color: "blue" },
+    { id: "st_2", row_number: 2, full_name: "بردیا رحمانی", grade_label: "یازدهم", grade_color: "purple" },
+    { id: "st_3", row_number: 3, full_name: "پارسا رستمی", grade_label: "دوازدهم", grade_color: "green" },
+    { id: "st_4", row_number: 4, full_name: "حسین محمدی", grade_label: "دهم", grade_color: "blue" },
+    { id: "st_5", row_number: 5, full_name: "کیارش عباسی", grade_label: "یازدهم", grade_color: "purple" },
+    { id: "st_6", row_number: 6, full_name: "نیما کاظمی", grade_label: "دوازدهم", grade_color: "green" },
+    { id: "st_7", row_number: 7, full_name: "رضا سعیدی", grade_label: "دهم", grade_color: "blue" },
+    { id: "st_8", row_number: 8, full_name: "سهیل نوری", grade_label: "یازدهم", grade_color: "purple" }
+];
+
+// js/store.js
+
+// ... (دیتای قبلی) ...
+
+export const exerciseStudentsData = [
+    { 
+        id: "st_1", name: "علی رضایی", avatar: "https://ui-avatars.com/api/?name=Ali+Rezaei&background=random",
+        needs_exercise: true, reason: "افت نمره در توابع", urgency: "high"
+    },
+    { 
+        id: "st_2", name: "کیارش رستمی", avatar: "https://ui-avatars.com/api/?name=Kiarash+R&background=random",
+        needs_exercise: true, reason: "عدم شرکت در آزمون", urgency: "medium"
+    },
+    { 
+        id: "st_3", name: "سارا امینی", avatar: "https://ui-avatars.com/api/?name=Sara+Amini&background=random",
+        needs_exercise: false, reason: "", urgency: "low"
+    },
+    { 
+        id: "st_4", name: "محمد محمدی", avatar: "https://ui-avatars.com/api/?name=Mohammad+M&background=random",
+        needs_exercise: false, reason: "", urgency: "low"
+    },
+    { 
+        id: "st_5", name: "نیما کاظمی", avatar: "https://ui-avatars.com/api/?name=Nima+Kazemi&background=random",
+        needs_exercise: true, reason: "ضعف در مثلثات", urgency: "high"
+    }
+];

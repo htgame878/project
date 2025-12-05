@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوع آزمون</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exams.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container-narrow">
+            
+            <div class="page-header-simple">
+                <a href="exams-step1.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                <h1>نوع آزمون را مشخص کنید</h1>
+            </div>
+
+            <div class="exam-type-list">
+                
+                <div class="type-card" onclick="selectType('start')">
+                    <div class="type-icon theme-green"><i class="fa-solid fa-flag"></i></div>
+                    <div class="type-content">
+                        <div class="type-text">آزمون مقدماتی</div>
+                        <div class="type-sub">سنجش آغازین سال تحصیلی</div>
+                    </div>
+                </div>
+
+                <div class="type-card" onclick="selectType('mid')">
+                    <div class="type-icon theme-blue"><i class="fa-regular fa-flag"></i></div>
+                    <div class="type-content">
+                        <div class="type-text">آزمون میانی (مستمر)</div>
+                        <div class="type-sub">آزمون‌های ماهانه و کلاسی</div>
+                    </div>
+                </div>
+
+                <div class="type-card" onclick="selectType('final')">
+                    <div class="type-icon theme-purple"><i class="fa-solid fa-flag-checkered"></i></div>
+                    <div class="type-content">
+                        <div class="type-text">آزمون نهایی (پایانی)</div>
+                        <div class="type-sub">امتحانات ترم اول و دوم</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectType(type) {
+            // ذخیره نوع انتخاب شده
+            localStorage.setItem('selected_exam_type', type);
+            // رفتن به مرحله بعد (آپلود)
+            window.location.href = 'exams-step3.html';
+        }
+    </script>
+    <script src="js/layout.js"></script>
+</body>
+</html>

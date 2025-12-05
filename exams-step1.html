@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انتخاب ماه آزمون</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exams.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container-narrow">
+            <div class="recent-exams-section">
+    
+                <div class="section-header-row">
+                    <h3>آزمون‌های ثبت شده</h3>
+                </div>
+            
+                <div class="exams-list">
+                    
+                    <div class="exam-item">
+                        <div class="exam-icon bg-green-light">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="exam-details">
+                            <span class="exam-name">ریاضی دهم - فصل اول</span>
+                            <span class="exam-meta">۱۴۰۲/۰۷/۱۰ • کلاس ۱۰۱</span>
+                        </div>
+                        <div class="exam-status">
+                            <span class="badge badge-success">تصحیح شده</span>
+                            <a href="#" class="btn-icon-sm"><i class="fa-solid fa-chevron-left"></i></a>
+                        </div>
+                    </div>
+            
+                    <div class="exam-item">
+                        <div class="exam-icon bg-orange-light">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+                        <div class="exam-details">
+                            <span class="exam-name">فیزیک یازدهم - کوییز</span>
+                            <span class="exam-meta">پیش‌نویس • بدون تاریخ</span>
+                        </div>
+                        <div class="exam-status">
+                            <span class="badge badge-warning">پیش‌نویس</span>
+                            <a href="#" class="btn-icon-sm"><i class="fa-solid fa-chevron-left"></i></a>
+                        </div>
+                    </div>
+            
+                    <div class="exam-item">
+                        <div class="exam-icon bg-blue-light">
+                            <i class="fa-solid fa-hourglass-half"></i>
+                        </div>
+                        <div class="exam-details">
+                            <span class="exam-name">هندسه دوازدهم - مستمر</span>
+                            <span class="exam-meta">۱۴۰۲/۰۸/۰۵ • کلاس ۳۰۵</span>
+                        </div>
+                        <div class="exam-status">
+                            <span class="badge badge-info">در انتظار برگزاری</span>
+                            <a href="#" class="btn-icon-sm"><i class="fa-solid fa-chevron-left"></i></a>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            <div class="page-header-simple">
+                <a href="dashboard.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                <h1>انتخاب ماه آزمون</h1>
+            </div>
+
+            <div class="months-grid">
+                
+                <div class="month-card" onclick="selectMonth('مهر')">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>مهر</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('آبان')">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>آبان</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('آذر')">
+                    <i class="fa-solid fa-snowflake"></i> <span>آذر</span>
+                </div>
+                
+                <div class="month-card" onclick="selectMonth('دی')">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span>دی</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('بهمن')">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span>بهمن</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('اسفند')">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>اسفند</span>
+                </div>
+
+                <div class="month-card" onclick="selectMonth('فروردین')">
+                    <i class="fa-solid fa-cloud-sun"></i> <span>فروردین</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('اردیبهشت')">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>اردیبهشت</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('خرداد')">
+                    <i class="fa-solid fa-graduation-cap"></i> <span>خرداد</span>
+                </div>
+
+                <div class="month-card" onclick="selectMonth('تیر')">
+                    <i class="fa-solid fa-sun"></i>
+                    <span>تیر</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('مرداد')">
+                    <i class="fa-solid fa-sun"></i>
+                    <span>مرداد</span>
+                </div>
+                <div class="month-card" onclick="selectMonth('شهریور')">
+                    <i class="fa-solid fa-school"></i>
+                    <span>شهریور</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function selectMonth(month) {
+            localStorage.setItem('selected_exam_month', month);
+            window.location.href = 'exams-step2.html';
+        }
+    </script>
+    <script src="js/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست کلی دانش‌آموزان</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all-students.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-content">
+        
+        <div class="container-max">
+            <div class="page-header-row">
+                <div class="header-title-group">
+                    <a href="dashboard.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                    <h1>لیست دانش‌آموزان</h1>
+                </div>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="studentSearch" placeholder="جستجو بر اساس نام...">
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="student-table" id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th class="col-index">#</th>
+                            <th class="col-name">نام و نام خانوادگی</th>
+                            <th class="col-grade">پایه</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        </tbody>
+                </table>
+                
+                <div id="no-result" class="no-result-msg hidden">
+                    نتیجه‌ای یافت نشد.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/layout.js"></script>
+    <script type="module" src="js/all-students.js"></script>
+</body>
+</html>

@@ -20,11 +20,14 @@ function createSidebar() {
             }">
                 <span>👨‍🎓</span> مدیریت کلاس‌ها
             </a>
-              <a href="classes.html" class="nav-item ">
+              <a href="exams-step1.html" class="nav-item ">
                 <span>👨‍🎓</span> مدیریت آزمون ها
             </a>
             <a href="#" class="nav-item">
                 <span>📊</span> تحلیل‌ها
+            </a>
+            <a href="exercises-landing.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
+                <span>⚙️</span> تمرین ها
             </a>
             <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
                 <span>⚙️</span> تنظیمات

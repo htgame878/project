@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامه هفتگی</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/schedule.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="page-header-simple">
+            <a href="dashboard.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+            <h1>برنامه هفتگی</h1>
+        </div>
+
+        <div id="schedule-container" class="schedule-wrapper"></div>
+        
+        <div style="height: 80px;"></div>
+    </div>
+
+    <div id="classSelectModal" class="modal-overlay">
+        <div class="select-card">
+            <h3>انتخاب کلاس</h3>
+            <p>برای این زنگ چه کلاسی دارید؟</p>
+            
+            <div id="classes-list" class="class-options-list">
+                </div>
+            
+            <button class="btn-cancel" onclick="closeModal()">انصراف</button>
+        </div>
+    </div>
+
+    <script src="js/layout.js"></script>
+    <script type="module" src="js/schedule.js"></script>
+</body>
+</html>
