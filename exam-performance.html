@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحلیل عملکرد</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/performance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container-scroll">
+            
+            <div class="page-header-simple">
+                <a href="dashboard.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                <h1 id="pageTitle">عملکرد: ریاضی فصل دوم</h1>
+            </div>
+
+            <div class="tabs-header">
+                <button class="tab-btn" onclick="switchTab('questions')" id="btn-tab-questions">
+                    <i class="fa-solid fa-puzzle-piece"></i> تحلیل سوالات
+                </button>
+                <button class="tab-btn active" onclick="switchTab('grades')" id="btn-tab-grades">
+                    <i class="fa-solid fa-chart-simple"></i> تحلیل نمرات
+                </button>
+            </div>
+
+            <div id="tab-questions" class="tab-content">
+                <div id="questions-list">
+                    </div>
+            </div>
+
+            <div id="tab-grades" class="tab-content active">
+                
+                <div class="sort-box">
+                    <span style="color:#64748b; font-size:0.85rem">لیست دانش‌آموزان:</span>
+                    <select class="sort-dropdown">
+                        <option>نمره: بالا به پایین</option>
+                        <option>الفبا</option>
+                    </select>
+                </div>
+                
+                <div id="grades-list">
+                    </div>
+
+                <div class="stats-section">
+                    <div class="section-head">آمار کلی کلاس</div>
+                    
+                    <div class="kpi-row">
+                        <div class="kpi-card">
+                            <span class="kpi-val" style="color:#3b82f6">16.4</span>
+                            <span class="kpi-lbl">میانگین</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-val" style="color:#16a34a">20</span>
+                            <span class="kpi-lbl">بالاترین</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-val" style="color:#ef4444">8.5</span>
+                            <span class="kpi-lbl">پایین‌ترین</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:25px; margin-bottom:10px; font-weight:bold; font-size:0.9rem; color:#475569">
+                        <i class="fa-solid fa-chart-column"></i> پراکندگی نمرات (توزیع)
+                    </div>
+                    <div class="chart-container" id="chart-bars">
+                        </div>
+
+                    <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:15px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                            <div style="font-weight:bold; color:#166534">اعتبار سنجی آزمون</div>
+                            <div style="font-size:0.8rem; color:#15803d">ضریب تمیز: 0.75</div>
+                        </div>
+                        <div style="background:#16a34a; color:white; padding:4px 12px; border-radius:20px; font-size:0.85rem;">استاندارد</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/layout.js"></script>
+    <script type="module" src="js/performance.js"></script>
+    <script>
+        // Tab Switching Logic (Inline for simplicity)
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('tab-' + tabId).classList.add('active');
+            document.getElementById('btn-tab-' + tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

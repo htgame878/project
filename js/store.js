@@ -222,3 +222,38 @@ export const exerciseStudentsData = [
         needs_exercise: true, reason: "ضعف در مثلثات", urgency: "high"
     }
 ];
+
+// js/store.js
+
+// ... (دیتای قبلی) ...
+
+export const examPerformanceData = {
+    exam_title: "ریاضی فصل دوم - توابع",
+    stats: {
+        avg: 16.4,
+        max: 20,
+        min: 8.5,
+        count: 25,
+        validity: "استاندارد",
+        discrimination_index: 0.75
+    },
+    // توزیع نمرات برای نمودار (تعداد دانش‌آموز در هر بازه)
+    distribution: [
+        { label: "۰-۱۰", count: 2, height: "10%" },
+        { label: "۱۰-۱۵", count: 8, height: "40%" }, // بیشترین تراکم
+        { label: "۱۵-۱۸", count: 10, height: "60%" },
+        { label: "۱۸-۲۰", count: 5, height: "25%" }
+    ],
+    students: [
+        { id: 1, name: "سارا محمدی", score: 20, rank: 1, status: "A" },
+        { id: 2, name: "علی رضایی", score: 18.5, rank: 2, status: "A" },
+        { id: 3, name: "نیما کاظمی", score: 16, rank: 3, status: "B" },
+        { id: 4, name: "کیارش رستمی", score: 14, rank: 4, status: "B" },
+        { id: 5, name: "حسین حسینی", score: 9, rank: 5, status: "C" }
+    ],
+    questions: [
+        { num: 1, text: "دامنه تابع رادیکالی زیر را بیابید...", correct_rate: "80%" },
+        { num: 2, text: "کدام یک از روابط زیر تابع است؟", correct_rate: "95%" },
+        { num: 3, text: "مقدار حد تابع در نقطه x=2...", correct_rate: "45%" } // سوال سخت
+    ]
+};

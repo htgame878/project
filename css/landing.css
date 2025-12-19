@@ -87,7 +87,9 @@
 .nav-overlay {
     display: none;
 }
-
+.logo-home{
+    width: 80px;
+}
 /* --- واکنش‌گرا (موبایل و تبلت) --- */
 @media (max-width: 768px) {
     .menu-toggle {

@@ -45,11 +45,11 @@ class ClassDetailManager {
                 </div>
                 <div class="btn-group">
                     <button class="btn-sm btn-outline-blue" onclick="window.openReport('${st.id}')">
-                        میان ترم
+                        آزمون ها
                     </button>
                     
-                    <button class="btn-sm btn-outline-indigo" onclick="alert('هنوز برگزار نشده است')">
-                        پایان ترم
+                    <button class="btn-sm btn-outline-indigo" onclick="alert('تحلیل...)">
+                        تحلیل
                     </button>
                 </div>
             </div>

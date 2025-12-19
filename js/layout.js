@@ -8,7 +8,12 @@ function createSidebar() {
   const path = window.location.pathname;
 
   sidebar.innerHTML = `
-        <h2 style="margin-bottom: 30px; color: var(--primary);">سیستم هوشمند</h2>
+        <a href="/">
+        <div style="display:flex;align-items: center;column-gap: 10px;margin-bottom:1rem" >
+        <img style="width:100px;" src="background_removed_image.png" />
+        <h3 style=" color: var(--primary);">سیستم هوشمند</h2>
+        </div>
+        </a>
         <nav>
             <a href="dashboard.html" class="nav-item ${
               path.includes("dashboard.html") ? "active" : ""
@@ -27,10 +32,13 @@ function createSidebar() {
                 <span>📊</span> تحلیل‌ها
             </a>
             <a href="exercises-landing.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>⚙️</span> تمرین ها
+                <span>📝</span> تمرین ها
             </a>
             <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
                 <span>⚙️</span> تنظیمات
+            </a>
+            <a href="/" class="nav-item">
+                <span>🏠</span> بازگشت به خانه
             </a>
         </nav>
     `;
