@@ -257,3 +257,34 @@ export const examPerformanceData = {
         { num: 3, text: "مقدار حد تابع در نقطه x=2...", correct_rate: "45%" } // سوال سخت
     ]
 };
+
+
+// js/store.js
+
+// ... (دیتای قبلی) ...
+
+export const teacherClasses = [
+    { id: "c1", name: "ریاضی دهم A" },
+    { id: "c2", name: "فیزیک یازدهم B" },
+    { id: "c3", name: "هندسه دوازدهم" }
+];
+
+export const mockNotes = [
+    {
+        id: 1,
+        type: "class",
+        target_name: "ریاضی دهم A",
+        text: "سطح انرژی کلاس امروز پایین بود. نیاز به استراحت بیشتر بین مباحث دارند.",
+        date: "۱۴۰۲/۰۹/۱۴",
+        tags: ["عمومی", "رفتاری"]
+    },
+    {
+        id: 2,
+        type: "student",
+        target_name: "علی رضایی",
+        avatar: "https://ui-avatars.com/api/?name=Ali+Rezaei&background=random",
+        text: "پیشرفت عالی در حل تمرینات مثلثات. تشویق شد.",
+        date: "۱۴۰۲/۰۹/۱۳",
+        tags: ["شخصی", "تحصیلی"]
+    }
+];

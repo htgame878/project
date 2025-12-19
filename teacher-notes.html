@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت یادداشت</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container-form">
+            
+            <div class="page-header-simple">
+                <a href="notes-history.html" class="back-btn"><i class="fa-solid fa-list"></i></a> <h1>ثبت یادداشت جدید</h1>
+            </div>
+
+            <label style="font-weight:bold; margin-bottom:10px; display:block;">متن یادداشت</label>
+            <textarea id="noteText" class="note-textarea" placeholder="مشاهدات خود را اینجا بنویسید (مثلاً: سطح انرژی کلاس...)"></textarea>
+
+            <label style="font-weight:bold; margin-bottom:10px; display:block;">مخاطب یادداشت:</label>
+            <div class="segmented-control">
+                <div class="segment-opt active" data-value="class" onclick="setTargetType('class')">
+                    <i class="fa-solid fa-users"></i> کل کلاس
+                </div>
+                <div class="segment-opt" data-value="student" onclick="setTargetType('student')">
+                    <i class="fa-solid fa-user"></i> دانش‌آموز
+                </div>
+            </div>
+
+            <div id="section-class" class="target-section visible">
+                <select id="classSelect" class="form-select">
+                    <option value="" disabled selected>کلاس را انتخاب کنید...</option>
+                    </select>
+            </div>
+
+            <div id="section-student" class="target-section">
+                <div id="student-empty-state" onclick="openStudentModal()">
+                    <div class="btn-select-student">
+                        <i class="fa-solid fa-magnifying-glass"></i> جستجو و انتخاب دانش‌آموز
+                    </div>
+                </div>
+
+                <div id="student-selected-state" class="selected-student-card hidden" style="display:none;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <img id="sel-st-avatar" src="" style="width:40px; height:40px; border-radius:50%;">
+                        <span id="sel-st-name" style="font-weight:bold;"></span>
+                    </div>
+                    <i class="fa-solid fa-circle-xmark st-remove-btn" onclick="clearStudentSelection()"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sticky-btn-container">
+        <button class="btn-submit" onclick="submitNote()">
+            <i class="fa-solid fa-check"></i> ثبت یادداشت
+        </button>
+    </div>
+
+    <div id="studentModal" class="modal-wrapper">
+        <div class="modal-sheet">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+                <h3 style="margin:0;">انتخاب دانش‌آموز</h3>
+                <i class="fa-solid fa-xmark" style="font-size:1.5rem; cursor:pointer;" onclick="closeStudentModal()"></i>
+            </div>
+            
+            <input type="text" id="modalSearch" class="modal-search" placeholder="جستجو بر اساس نام...">
+            
+            <div id="modalList" class="modal-list">
+                </div>
+        </div>
+    </div>
+
+    <script src="js/layout.js"></script>
+    <script type="module" src="js/notes.js"></script>
+</body>
+</html>

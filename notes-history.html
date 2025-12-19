@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>یادداشت‌های من</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container-form">
+            
+            <div class="page-header-simple">
+                <a href="dashboard.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                <h1>یادداشت‌های ثبت شده</h1>
+            </div>
+
+            <div class="filter-row">
+                <button class="filter-chip active" onclick="filterNotes('all')" id="filter-all">
+                    همه
+                </button>
+                <button class="filter-chip" onclick="filterNotes('class')" id="filter-class">
+                    <i class="fa-solid fa-users"></i> کلاس‌ها
+                </button>
+                <button class="filter-chip" onclick="filterNotes('student')" id="filter-student">
+                    <i class="fa-solid fa-user"></i> دانش‌آموزان
+                </button>
+            </div>
+
+            <div id="notes-feed">
+                </div>
+
+        </div>
+    </div>
+
+    <a href="teacher-notes.html" style="position:fixed; bottom:25px; left:25px; width:60px; height:60px; background:var(--primary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 4px 15px rgba(59,130,246,0.4); z-index:90; text-decoration:none;">
+        <i class="fa-solid fa-plus"></i>
+    </a>
+
+    <script src="js/layout.js"></script>
+    
+    <script type="module">
+        import { mockNotes } from './js/store.js';
+        
+        // تابع سراسری برای فیلتر کردن (اتصال به window برای دسترسی در HTML)
+        window.filterNotes = (type) => {
+            // 1. آپدیت ظاهر دکمه‌ها
+            document.querySelectorAll('.filter-chip').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`filter-${type}`).classList.add('active');
+
+            // 2. فیلتر کردن داده‌ها
+            let filteredData = mockNotes;
+            if (type !== 'all') {
+                filteredData = mockNotes.filter(n => n.type === type);
+            }
+
+            // 3. رندر کردن
+            renderList(filteredData);
+        };
+
+        function renderList(notes) {
+            const feed = document.getElementById('notes-feed');
+            feed.innerHTML = ''; // پاک کردن لیست قبلی
+
+            if (notes.length === 0) {
+                feed.innerHTML = `
+                    <div class="empty-state-msg">
+                        <i class="fa-regular fa-clipboard" style="font-size:2rem; margin-bottom:10px; display:block;"></i>
+                        یادداشتی در این بخش یافت نشد.
+                    </div>
+                `;
+                return;
+            }
+
+            notes.forEach(note => {
+                const isClass = note.type === 'class';
+                const cardClass = isClass ? 'note-class' : 'note-student';
+                const badgeClass = isClass ? 'badge-class' : 'badge-student';
+                const icon = isClass ? '<i class="fa-solid fa-users"></i>' : '<i class="fa-solid fa-user"></i>';
+                
+                const html = `
+                    <div class="note-card ${cardClass}">
+                        <div class="note-header">
+                            <span>${icon} ${note.type === 'class' ? 'کلاس' : 'دانش‌آموز'}</span>
+                            <span>${note.date}</span>
+                        </div>
+                        <div class="note-tags">
+                            <span class="tag ${badgeClass}">${note.target_name}</span>
+                            ${note.tags.map(t => `<span class="tag" style="background:white; border:1px solid #ccc;">${t}</span>`).join('')}
+                        </div>
+                        <div class="note-body">
+                            ${note.text}
+                        </div>
+                    </div>
+                `;
+                feed.innerHTML += html;
+            });
+        }
+
+        // اجرای اولیه (نمایش همه)
+        renderList(mockNotes);
+    </script>
+</body>
+</html> 
