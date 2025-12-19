@@ -32,8 +32,11 @@ function createSidebar() {
                 <span>📊</span> تحلیل‌ها
             </a>
             <a href="exercises-landing.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>📝</span> تمرین ها
+                <span>🏅</span> تمرین ها
             </a>
+             <a href="teacher-notes.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
+                <span>📝</span> یادداشت ها
+              </a>
             <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
                 <span>⚙️</span> تنظیمات
             </a>
