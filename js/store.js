@@ -188,125 +188,143 @@ export const weeklyScheduleData = {
 // ... (دیتای قبلی) ...
 
 export const allStudentsData = [
-    { id: "st_1", row_number: 1, full_name: "آرمان کریمی", grade_label: "دهم", grade_color: "blue" },
-    { id: "st_2", row_number: 2, full_name: "بردیا رحمانی", grade_label: "یازدهم", grade_color: "purple" },
-    { id: "st_3", row_number: 3, full_name: "پارسا رستمی", grade_label: "دوازدهم", grade_color: "green" },
-    { id: "st_4", row_number: 4, full_name: "حسین محمدی", grade_label: "دهم", grade_color: "blue" },
-    { id: "st_5", row_number: 5, full_name: "کیارش عباسی", grade_label: "یازدهم", grade_color: "purple" },
-    { id: "st_6", row_number: 6, full_name: "نیما کاظمی", grade_label: "دوازدهم", grade_color: "green" },
-    { id: "st_7", row_number: 7, full_name: "رضا سعیدی", grade_label: "دهم", grade_color: "blue" },
-    { id: "st_8", row_number: 8, full_name: "سهیل نوری", grade_label: "یازدهم", grade_color: "purple" }
-];
+    { id: "st_1", row_number: 1, full_name: "اسکندری امیرحسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_2", row_number: 2, full_name: "آلبوعطوی امیرحسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_3", row_number: 3, full_name: "انصاری محمدحسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_4", row_number: 4, full_name: "بدوی شهاب", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_5", row_number: 5, full_name: "بنی هاشمی سیدمحمد مهدی", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_6", row_number: 6, full_name: "بهبهانی امیرحسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_7", row_number: 7, full_name: "پاک نیت طاها", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_8", row_number: 8, full_name: "پولک کش علیرضا", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_9", row_number: 9, full_name: "حردانی ایلیا", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_10", row_number: 10, full_name: "حسینی محمدجواد", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_11", row_number: 11, full_name: "حیدری محمدمتین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_12", row_number: 12, full_name: "خیام زاده سواری نژاد مهدی", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_13", row_number: 13, full_name: "دوستانی فر علی", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_14", row_number: 14, full_name: "سپهری صدرا", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_15", row_number: 15, full_name: "شجاع حسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_16", row_number: 16, full_name: "صادقی پاک حسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_17", row_number: 17, full_name: "صالحی محمد", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_18", row_number: 18, full_name: "طاهری نیا حسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_19", row_number: 19, full_name: "عچرش محمدرضا", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_20", row_number: 20, full_name: "قریشوندی ابوالفضل", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_21", row_number: 21, full_name: "کرمی سیدبنیامین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_22", row_number: 22, full_name: "مردان عرفان", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_23", row_number: 23, full_name: "منظری امیرحسین", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_24", row_number: 24, full_name: "مهرجو پارسا", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_25", row_number: 25, full_name: "وفائیان امیرمحمد", grade_label: "نهم", grade_color: "blue" },
+    { id: "st_26", row_number: 26, full_name: "یاسین زاده ماهان", grade_label: "نهم", grade_color: "blue" }
+  ]
 
 // js/store.js
 
 // ... (دیتای قبلی) ...
 
 export const exerciseStudentsData = [
-    {
-        id: "st_1", name: "اسکندری امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Eskandari&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_2", name: "آلبوعطوی امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Albuatavi&background=random",
-        needs_exercise: true, reason: "ضعف در محاسبات پایه", urgency: "medium"
-    },
-    {
-        id: "st_3", name: "انصاری محمدحسین", avatar: "https://ui-avatars.com/api/?name=Mohammadhossein+Ansari&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_4", name: "بدوی شهاب", avatar: "https://ui-avatars.com/api/?name=Shahab+Badavi&background=random",
-        needs_exercise: true, reason: "عدم تحویل تکالیف", urgency: "high"
-    },
-    {
-        id: "st_5", name: "بنی هاشمی سیدمحمد مهدی", avatar: "https://ui-avatars.com/api/?name=Seyed+Mohammad+Mahdi+Banihashemi&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_6", name: "بهبهانی امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Behbahani&background=random",
-        needs_exercise: true, reason: "افت نمره در هندسه", urgency: "medium"
-    },
-    {
-        id: "st_7", name: "پاک نیت طاها", avatar: "https://ui-avatars.com/api/?name=Taha+Pakniyat&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_8", name: "پولک کش علیرضا", avatar: "https://ui-avatars.com/api/?name=Alireza+Polakkesh&background=random",
-        needs_exercise: true, reason: "مشکل در اتحادها", urgency: "high"
-    },
-    {
-        id: "st_9", name: "حردانی ایلیا", avatar: "https://ui-avatars.com/api/?name=Ilya+Hardani&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_10", name: "حسینی محمدجواد", avatar: "https://ui-avatars.com/api/?name=Mohammadjavad+Hosseini&background=random",
-        needs_exercise: true, reason: "غیبت در امتحان میان‌ترم", urgency: "high"
-    },
-    {
-        id: "st_11", name: "حیدری محمدمتین", avatar: "https://ui-avatars.com/api/?name=Mohammadmatin+Heidari&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_12", name: "خیام زاده سواری نژاد مهدی", avatar: "https://ui-avatars.com/api/?name=Mahdi+Khayamzadeh&background=random",
-        needs_exercise: true, reason: "نیاز به تمرین بیشتر", urgency: "medium"
-    },
-    {
-        id: "st_13", name: "دوستانی فر علی", avatar: "https://ui-avatars.com/api/?name=Ali+Doostanifar&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_14", name: "سپهری صدرا", avatar: "https://ui-avatars.com/api/?name=Sadra+Sepehri&background=random",
-        needs_exercise: true, reason: "افت نمره مستمر", urgency: "medium"
-    },
-    {
-        id: "st_15", name: "شجاع حسین", avatar: "https://ui-avatars.com/api/?name=Hossein+Shoja&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_16", name: "صادقی پاک حسین", avatar: "https://ui-avatars.com/api/?name=Hossein+Sadeghi+Pak&background=random",
-        needs_exercise: true, reason: "مشکل در حل مسائل", urgency: "high"
-    },
-    {
-        id: "st_17", name: "صالحی محمد", avatar: "https://ui-avatars.com/api/?name=Mohammad+Salehi&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_18", name: "طاهری نیا حسین", avatar: "https://ui-avatars.com/api/?name=Hossein+Taherinia&background=random",
-        needs_exercise: true, reason: "عدم تمرکز در کلاس", urgency: "medium"
-    },
-    {
-        id: "st_19", name: "عچرش محمدرضا", avatar: "https://ui-avatars.com/api/?name=Mohammadreza+Acharash&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_20", name: "قریشوندی ابوالفضل", avatar: "https://ui-avatars.com/api/?name=Abolfazl+Ghoreishvandi&background=random",
-        needs_exercise: true, reason: "نمره پایین آزمون کلاسی", urgency: "high"
-    },
-    {
-        id: "st_21", name: "کرمی سیدبنیامین", avatar: "https://ui-avatars.com/api/?name=Seyed+Benyamin+Karami&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_22", name: "مردان عرفان", avatar: "https://ui-avatars.com/api/?name=Erfan+Mardan&background=random",
-        needs_exercise: true, reason: "نیاز به کلاس جبرانی", urgency: "medium"
-    },
-    {
-        id: "st_23", name: "منظری امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Manzari&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_24", name: "مهرجو پارسا", avatar: "https://ui-avatars.com/api/?name=Parsa+Mehrjoo&background=random",
-        needs_exercise: true, reason: "تاخیر در ارسال پروژه", urgency: "low"
-    },
-    {
-        id: "st_25", name: "وفائیان امیرمحمد", avatar: "https://ui-avatars.com/api/?name=Amirmohammad+Vafaeian&background=random",
-        needs_exercise: false, reason: "", urgency: "low"
-    },
-    {
-        id: "st_26", name: "یاسین زاده ماهان", avatar: "https://ui-avatars.com/api/?name=Mahan+Yasinzadeh&background=random",
-        needs_exercise: true, reason: "ضعف در ریاضیات", urgency: "high"
-    }
+        {
+            id: "st_1", name: "اسکندری امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Eskandari&background=random",
+            needs_exercise: true, reason: "ضعف در درک مطلب", urgency: "medium"
+        },
+        {
+            id: "st_2", name: "آلبوعطوی امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Albuatavi&background=random",
+            needs_exercise: true, reason: "ضعف در واژگان", urgency: "high"
+        },
+        {
+            id: "st_3", name: "انصاری محمدحسین", avatar: "https://ui-avatars.com/api/?name=Mohammadhossein+Ansari&background=random",
+            needs_exercise: true, reason: "ضعف در گرامر", urgency: "medium"
+        },
+        {
+            id: "st_4", name: "بدوی شهاب", avatar: "https://ui-avatars.com/api/?name=Shahab+Badavi&background=random",
+            needs_exercise: true, reason: "عدم تحویل تمرین های خانگی", urgency: "high"
+        },
+        {
+            id: "st_5", name: "بنی هاشمی سیدمحمد مهدی", avatar: "https://ui-avatars.com/api/?name=Seyed+Mohammad+Mahdi+Banihashemi&background=random",
+            needs_exercise: true, reason: "غیبت در امتحان تعیین سطح", urgency: "high"
+        },
+        {
+            id: "st_6", name: "بهبهانی امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Behbahani&background=random",
+            needs_exercise: true, reason: "نیاز به تمرین بیشتر", urgency: "medium"
+        },
+        {
+            id: "st_7", name: "پاک نیت طاها", avatar: "https://ui-avatars.com/api/?name=Taha+Pakniyat&background=random",
+            needs_exercise: true, reason: "ضعف در درک مطلب", urgency: "low"
+        },
+        {
+            id: "st_8", name: "پولک کش علیرضا", avatar: "https://ui-avatars.com/api/?name=Alireza+Polakkesh&background=random",
+            needs_exercise: true, reason: "ضعف در واژگان", urgency: "medium"
+        },
+        {
+            id: "st_9", name: "حردانی ایلیا", avatar: "https://ui-avatars.com/api/?name=Ilya+Hardani&background=random",
+            needs_exercise: false, reason: "", urgency: "low"
+        },
+        {
+            id: "st_10", name: "حسینی محمدجواد", avatar: "https://ui-avatars.com/api/?name=Mohammadjavad+Hosseini&background=random",
+            needs_exercise: true, reason: "ضعف در گرامر", urgency: "high"
+        },
+        {
+            id: "st_11", name: "حیدری محمدمتین", avatar: "https://ui-avatars.com/api/?name=Mohammadmatin+Heidari&background=random",
+            needs_exercise: true, reason: "عدم تحویل تمرین های خانگی", urgency: "medium"
+        },
+        {
+            id: "st_12", name: "خیام زاده سواری نژاد مهدی", avatar: "https://ui-avatars.com/api/?name=Mahdi+Khayamzadeh&background=random",
+            needs_exercise: true, reason: "غیبت در امتحان تعیین سطح", urgency: "high"
+        },
+        {
+            id: "st_13", name: "دوستانی فر علی", avatar: "https://ui-avatars.com/api/?name=Ali+Doostanifar&background=random",
+            needs_exercise: false, reason: "", urgency: "low"
+        },
+        {
+            id: "st_14", name: "سپهری صدرا", avatar: "https://ui-avatars.com/api/?name=Sadra+Sepehri&background=random",
+            needs_exercise: true, reason: "نیاز به تمرین بیشتر", urgency: "medium"
+        },
+        {
+            id: "st_15", name: "شجاع حسین", avatar: "https://ui-avatars.com/api/?name=Hossein+Shoja&background=random",
+            needs_exercise: true, reason: "ضعف در درک مطلب", urgency: "low"
+        },
+        {
+            id: "st_16", name: "صادقی پاک حسین", avatar: "https://ui-avatars.com/api/?name=Hossein+Sadeghi+Pak&background=random",
+            needs_exercise: true, reason: "ضعف در واژگان", urgency: "high"
+        },
+        {
+            id: "st_17", name: "صالحی محمد", avatar: "https://ui-avatars.com/api/?name=Mohammad+Salehi&background=random",
+            needs_exercise: false, reason: "", urgency: "low"
+        },
+        {
+            id: "st_18", name: "طاهری نیا حسین", avatar: "https://ui-avatars.com/api/?name=Hossein+Taherinia&background=random",
+            needs_exercise: true, reason: "ضعف در گرامر", urgency: "medium"
+        },
+        {
+            id: "st_19", name: "عچرش محمدرضا", avatar: "https://ui-avatars.com/api/?name=Mohammadreza+Acharash&background=random",
+            needs_exercise: true, reason: "عدم تحویل تمرین های خانگی", urgency: "medium"
+        },
+        {
+            id: "st_20", name: "قریشوندی ابوالفضل", avatar: "https://ui-avatars.com/api/?name=Abolfazl+Ghoreishvandi&background=random",
+            needs_exercise: true, reason: "غیبت در امتحان تعیین سطح", urgency: "high"
+        },
+        {
+            id: "st_21", name: "کرمی سیدبنیامین", avatar: "https://ui-avatars.com/api/?name=Seyed+Benyamin+Karami&background=random",
+            needs_exercise: false, reason: "", urgency: "low"
+        },
+        {
+            id: "st_22", name: "مردان عرفان", avatar: "https://ui-avatars.com/api/?name=Erfan+Mardan&background=random",
+            needs_exercise: true, reason: "نیاز به تمرین بیشتر", urgency: "medium"
+        },
+        {
+            id: "st_23", name: "منظری امیرحسین", avatar: "https://ui-avatars.com/api/?name=Amirhossein+Manzari&background=random",
+            needs_exercise: true, reason: "ضعف در درک مطلب", urgency: "low"
+        },
+        {
+            id: "st_24", name: "مهرجو پارسا", avatar: "https://ui-avatars.com/api/?name=Parsa+Mehrjoo&background=random",
+            needs_exercise: true, reason: "ضعف در واژگان", urgency: "medium"
+        },
+        {
+            id: "st_25", name: "وفائیان امیرمحمد", avatar: "https://ui-avatars.com/api/?name=Amirmohammad+Vafaeian&background=random",
+            needs_exercise: false, reason: "", urgency: "low"
+        },
+        {
+            id: "st_26", name: "یاسین زاده ماهان", avatar: "https://ui-avatars.com/api/?name=Mahan+Yasinzadeh&background=random",
+            needs_exercise: true, reason: "ضعف در گرامر", urgency: "high"
+        }
 ]
 
 // js/store.js

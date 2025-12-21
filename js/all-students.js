@@ -39,7 +39,7 @@ class StudentListManager {
 
             tr.innerHTML = `
                 <td style="text-align:center; color:#94a3b8;">${student.row_number}</td>
-                <td style="font-weight:bold;">${student.full_name}</td>
+                <td >${student.full_name}</td>
                 <td style="text-align:left;">
                     <span class="grade-badge ${badgeClass}">${student.grade_label}</span>
                 </td>

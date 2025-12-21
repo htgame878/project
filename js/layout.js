@@ -11,7 +11,7 @@ function createSidebar() {
         <a href="index.html">
         <div style="display:flex;align-items: center;column-gap: 10px;margin-bottom:1rem" >
         <img style="width:100px;" src="background_removed_image.png" />
-        <h3 style=" color: var(--primary);">برهان</h2>
+        <h3 style=" color: var(--primary);font-size:2rem">برهان</h2>
         </div>
         </a>
         <nav>
@@ -40,7 +40,7 @@ function createSidebar() {
             <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
                 <span>⚙️</span> تنظیمات
             </a>
-            <a href="index.html" class="nav-item">
+            <a href="index.html" class="nav-item" style="justify-content: center;">
                  بازگشت به خانه
             </a>
         </nav>

@@ -39,15 +39,15 @@ class ExerciseManager {
                 reasonHtml = `<div class="st-reason"><i class="fa-solid fa-triangle-exclamation"></i> ${st.reason}</div>`;
                 actionBtn = `
                     <button class="btn-action btn-primary-action" onclick="alert('ایجاد تمرین برای ${st.name}')">
-                        <span class="ai-dot"></span> ایجاد تمرین
+                        <span class="fas fa-plus"></span> ایجاد تمرین
                     </button>
                 `;
             } else {
                 // وضعیت عادی
                 reasonHtml = `<div style="font-size:0.75rem; color:#94a3b8">وضعیت پایدار</div>`;
                 actionBtn = `
-                    <button class="btn-action btn-secondary-action" onclick="alert('مشاهده تاریخچه ${st.name}')">
-                        تاریخچه
+                    <button class="btn-action btn-secondary-action " onclick="alert('مشاهده تاریخچه ${st.name}')">
+                        <span class="fas fa-book"></span>تاریخچه
                     </button>
                 `;
             }
