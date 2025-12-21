@@ -8,10 +8,10 @@ function createSidebar() {
   const path = window.location.pathname;
 
   sidebar.innerHTML = `
-        <a href="/">
+        <a href="index.html">
         <div style="display:flex;align-items: center;column-gap: 10px;margin-bottom:1rem" >
         <img style="width:100px;" src="background_removed_image.png" />
-        <h3 style=" color: var(--primary);">سیستم هوشمند</h2>
+        <h3 style=" color: var(--primary);">برهان/h2>
         </div>
         </a>
         <nav>
