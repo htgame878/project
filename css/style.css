@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "iran";
+    src: url("/font/Iranian\ Sans.ttf");
+}
 :root {
     --primary: #3b82f6;
     --bg-body: #f3f4f6;
@@ -5,7 +9,7 @@
     
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tahoma', sans-serif; text-decoration: none; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tahoma', sans-serif; text-decoration: none;font-family: "iran"; }
 
 body {  background: var(--bg-body); direction: rtl; }
 
