@@ -156,19 +156,18 @@ export const studentReports = {
 
 // لیست کلاس‌هایی که معلم دارد (برای انتخاب در مودال)
 export const availableClasses = [
-    { id: "c_101", name: "ریاضی دهم A", location: "کلاس ۱۰۱" },
-    { id: "c_102", name: "فیزیک یازدهم B", location: "کلاس ۲۰۳" },
-    { id: "c_103", name: "هندسه دوازدهم", location: "کلاس ۳۰۵" },
+    { id: "c_101", name: "هفتم دو", location: "کلاس ۱۰۱" },
+    { id: "c_102", name: "نهم دو", location: "کلاس ۲۰۳" },
+    { id: "c_103", name: "هندسه دوازدهم", location: "کلاس ۳۰۵" }, // این مورد را تغییر ندادم چون فقط دو نام جدید دادید
     { id: "free", name: "ساعت آزاد / مطالعه", location: "دفتر معلمان" }
 ];
 
 // داده‌های برنامه هفتگی (شنبه تا پنج‌شنبه)
-// هر روز آرایه‌ای از 3 اسلات دارد. null یعنی خالی.
 export const weeklyScheduleData = {
     "sat": [
-        { class_id: "c_101", name: "ریاضی دهم A", location: "کلاس ۱۰۱" }, // زنگ ۱
+        { class_id: "c_101", name: "هفتم دو", location: "کلاس ۱۰۱" }, // زنگ ۱
         null, // زنگ ۲ خالی
-        { class_id: "c_102", name: "فیزیک یازدهم B", location: "کلاس ۲۰۳" } // زنگ ۳
+        { class_id: "c_102", name: "نهم دو", location: "کلاس ۲۰۳" } // زنگ ۳
     ],
     "sun": [null, null, null],
     "mon": [
@@ -264,18 +263,17 @@ export const examPerformanceData = {
 // ... (دیتای قبلی) ...
 
 export const teacherClasses = [
-    { id: "c1", name: "ریاضی دهم A" },
-    { id: "c2", name: "فیزیک یازدهم B" },
-    { id: "c3", name: "هندسه دوازدهم" }
+    { id: "c1", name: "نهم دو" },
+    { id: "c2", name: "هفتم دو" }
 ];
 
 export const mockNotes = [
     {
         id: 1,
         type: "class",
-        target_name: "ریاضی دهم A",
+        target_name: "نهم دو",
         text: "سطح انرژی کلاس امروز پایین بود. نیاز به استراحت بیشتر بین مباحث دارند.",
-        date: "۱۴۰۲/۰۹/۱۴",
+        date: "۱۴۰۲/۱۰/۳۰",
         tags: ["عمومی", "رفتاری"]
     },
     {
@@ -284,7 +282,7 @@ export const mockNotes = [
         target_name: "علی رضایی",
         avatar: "https://ui-avatars.com/api/?name=Ali+Rezaei&background=random",
         text: "پیشرفت عالی در حل تمرینات مثلثات. تشویق شد.",
-        date: "۱۴۰۲/۰۹/۱۳",
+        date: "۱۴۰۲/۱۰/۳۰",
         tags: ["شخصی", "تحصیلی"]
     }
 ];

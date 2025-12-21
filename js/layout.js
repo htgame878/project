@@ -23,25 +23,25 @@ function createSidebar() {
             <a href="classes.html" class="nav-item ${
               path.includes("classes.html") ? "active" : ""
             }">
-                <span>👨‍🎓</span> مدیریت کلاس‌ها
+                <span>👨‍🏫</span> مدیریت کلاس‌ ها
             </a>
               <a href="exams-step1.html" class="nav-item ">
                 <span>👨‍🎓</span> مدیریت آزمون ها
             </a>
             <a href="#" class="nav-item">
-                <span>📊</span> تحلیل‌ها
+                <span>📊</span> تحلیل‌ ها
             </a>
             <a href="exercises-landing.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>🏅</span> تمرین ها
+                <span>📝</span> تمرین ها
             </a>
              <a href="teacher-notes.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>📝</span> یادداشت ها
+                <span>🖇️</span> یادداشت ها
               </a>
             <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
                 <span>⚙️</span> تنظیمات
             </a>
             <a href="index.html" class="nav-item">
-                <span>🏠</span> بازگشت به خانه
+                 بازگشت به خانه
             </a>
         </nav>
     `;

@@ -13,8 +13,8 @@ const daysConfig = [
 
 const slotsConfig = [
     "زنگ اول (۸:۰۰ - ۹:۳۰)",
-    "زنگ دوم (۱۰:۰۰ - ۱۱:۳۰)",
-    "زنگ سوم (۱۲:۰۰ - ۱۳:۳۰)"
+    "زنگ دوم (۰۹:۳۰ - ۱۱:۰۰)",
+    "زنگ سوم (۱۱:۰۰ - ۱۲:۳۰)"
 ];
 
 // متغیرهای وضعیت ویرایش
@@ -59,7 +59,6 @@ class ScheduleManager {
                             <div class="slot-label">${timeLabel}</div>
                             <div class="slot-filled" onclick="window.openClassModal('${day.id}', ${i})">
                                 <div class="class-name">${slotData.name}</div>
-                                <div class="class-loc"><i class="fa-solid fa-location-dot"></i> ${slotData.location}</div>
                             </div>
                         </div>
                     `;
