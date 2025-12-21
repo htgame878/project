@@ -40,7 +40,7 @@ function createSidebar() {
             <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
                 <span>⚙️</span> تنظیمات
             </a>
-            <a href="/" class="nav-item">
+            <a href="index.html" class="nav-item">
                 <span>🏠</span> بازگشت به خانه
             </a>
         </nav>
