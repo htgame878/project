@@ -46,7 +46,7 @@ export const classDetailData = {
       "title": "کلاس نهم توکل - زبان انگلیسی",
       "breadcrumb": [
           { "text": "لیست کلاس‌ها", "href": "classes.html" },
-          { "text": "کلاس نهم توکل - زبان انگلیسی", "href": "#", "active": true }
+          { "text": localStorage.getItem("class")=="نهم - توکل"?"کلاس نهم توکل - زبان انگلیسی":"هفتم دو", "href": "#", "active": true }
       ]
   },
   "students": [
@@ -358,17 +358,59 @@ export const classDetailData = {
         }
   ],
   "exams": [
-      { 
-          "id": "ex_1", "title": "آزمون فصل اول (توابع)", "date": "۱۴۰۲/۰۷/۱۰", 
-          "status": "closed", "status_label": "برگزار شده", "score_avg": 16.5 
+    { 
+        "id": "ex_1", 
+        "title": "آزمون زبان انگلیسی - نهایی", 
+        "class": "نهم - توکل", 
+        "date": "۱۴۰۴/۰۹/۲۵", 
+        "status": "closed", 
+        "status_label": "برگزار شده", 
+        "score_avg": 17.5 
       },
       { 
-          "id": "ex_2", "title": "آزمون مثلثات", "date": "۱۴۰۲/۰۸/۰۵", 
-          "status": "active", "status_label": "در حال برگزاری", "score_avg": null 
+        "id": "ex_2", 
+        "title": "آزمون زبان انگلیسی - شخصی‌سازی شده میانی", 
+        "class": "نهم - توکل", 
+        "date": "۱۴۰۴/۱۰/۰۲", 
+        "status": "pending", 
+        "status_label": "در انتظار برگزاری", 
+        "score_avg": null 
       },
       { 
-          "id": "ex_3", "title": "میان ترم اول", "date": "۱۴۰۲/۰۹/۲۰", 
-          "status": "draft", "status_label": "پیش‌نویس", "score_avg": null 
+        "id": "ex_3", 
+        "title": "آزمون زبان انگلیسی - نهایی", 
+        "class": "نهم - توکل", 
+        "date": "۱۴۰۴/۱۰/۰۹", 
+        "status": "pending", 
+        "status_label": "در انتظار برگزاری", 
+        "score_avg": null 
+      },
+      { 
+        "id": "ex_1", 
+        "title": "آزمون زبان انگلیسی - نهایی", 
+        "class": "هفتم - ۲", 
+        "date": "۱۴۰۴/۰۹/۲۵", 
+        "status": "closed", 
+        "status_label": "برگزار شده", 
+        "score_avg": 17.5 
+      },
+      { 
+        "id": "ex_2", 
+        "title": "آزمون زبان انگلیسی - شخصی‌سازی شده میانی", 
+        "class": "هفتم - ۲", 
+        "date": "۱۴۰۴/۱۰/۰۲", 
+        "status": "pending", 
+        "status_label": "در انتظار برگزاری", 
+        "score_avg": null 
+      },
+      { 
+        "id": "ex_3", 
+        "title": "آزمون زبان انگلیسی - نهایی", 
+        "class": "هفتم - ۲", 
+        "date": "۱۴۰۴/۱۰/۰۹", 
+        "status": "pending", 
+        "status_label": "در انتظار برگزاری", 
+        "score_avg": null 
       }
   ]
 };

@@ -71,17 +71,17 @@ class ClassDetailManager {
         const container = document.getElementById('exams-grid');
         if (!container) return;
 
-        container.innerHTML = this.data.exams.map(ex => {
+        container.innerHTML = this.data.exams.filter(u=>u.class==localStorage.getItem("class")).map(ex => {
             let badgeClass = 'badge-closed';
-            if (ex.status === 'active') badgeClass = 'badge-active';
-            if (ex.status === 'draft') badgeClass = 'badge-draft';
+            if (ex.status === 'closed') badgeClass = 'badge-active';
+            if (ex.status === 'pending') badgeClass = 'badge-draft';
 
             // لینک به صفحه ماتریس نمرات (exam-entry.html)
             return `
             <a href="exam-entry.html?exam_id=${ex.id}" class="exam-card">
-                <span class="badge ${badgeClass}">${ex.status_label}</span>
-                <span class="exam-title">${ex.title}</span>
-                <span class="exam-date"><i class="fa-regular fa-calendar"></i> ${ex.date}</span>
+            <span class="exam-title">${ex.title}</span>
+            <span class="exam-date"><i class="fa-regular fa-calendar"></i> ${ex.date}</span>
+            <span class="badge ${badgeClass}">${ex.status_label}</span>
             </a>
             `;
         }).join('');
