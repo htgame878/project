@@ -37,22 +37,32 @@ class ClassDetailManager {
         const container = document.getElementById('students-list');
         if (!container) return;
 
-        container.innerHTML = this.data.students.map(st => `
-            <div class="student-row">
-                <div class="st-info">
-                    <img src="${st.avatar}" class="st-avatar" alt="${st.name}">
-                    <span class="st-name">${st.name}</span>
-                </div>
-                <div class="btn-group">
-                    <button class="btn-sm btn-outline-blue" onclick="window.openReport('${st.id}')">
-                        آزمون ها
-                    </button>
-                    
-                    <button class="btn-sm btn-outline-indigo" onclick="alert('تحلیل...)">
-                        تحلیل
-                    </button>
-                </div>
-            </div>
+        container.innerHTML = this.data.students.filter(u=>u.class==localStorage.getItem("class")).map((st,index) => `
+           <div class="student-row">
+    <div class="st-info">
+        <div class="st-index">
+            ${index+1}
+        </div>
+
+        <img src="${st.avatar}" class="st-avatar" alt="${st.name}">
+        
+        <div class="st-text-details">
+            <span class="st-name">${st.name}</span>
+            <span class="st-class-name">${st.class || ''}</span> </div>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn-sm btn-outline-indigo" onclick="alert('تمرین برای ${st.name}')">
+            تمرین‌ها
+        </button>
+        <button class="btn-sm btn-outline-blue" onclick="window.openReport('${st.id}')">
+            آزمون‌ها
+        </button>
+        <button class="btn-sm btn-outline-indigo" onclick="alert('تحلیل ${st.name}')">
+            تحلیل
+        </button>
+    </div>
+</div>
         `).join('');
     }
 

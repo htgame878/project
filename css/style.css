@@ -54,3 +54,37 @@ body {  background: var(--bg-body); direction: rtl; }
     border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center;
     cursor: pointer; min-height: 150px; flex-direction: column; color: #777;
 }
+/* تنظیم بخش اطلاعات سمت راست */
+.st-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* فاصله بین عدد، عکس و نام */
+}
+
+/* استایل شماره ردیف (دایره‌ای یا ساده) */
+.st-index {
+    width: 28px;
+    height: 28px;
+    background-color: #f1f5f9; /* خاکستری خیلی روشن */
+    color: #64748b;            /* رنگ متن خاکستری */
+    border-radius: 50%;        /* گرد کردن (دایره) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    flex-shrink: 0; /* جلوگیری از جمع شدن */
+}
+
+/* استایل ریز برای نام کلاس زیر اسم (اختیاری) */
+.st-class-name {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* جهت اطمینان از چیدمان نام */
+.st-text-details {
+    display: flex;
+    flex-direction: column;
+}

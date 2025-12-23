@@ -43,17 +43,319 @@ export const examEntryData = {
 export const classDetailData = {
   "info": {
       "id": "c_101",
-      "title": "کلاس ۱۰۱ - ریاضی",
+      "title": "کلاس نهم توکل - زبان انگلیسی",
       "breadcrumb": [
           { "text": "لیست کلاس‌ها", "href": "classes.html" },
-          { "text": "کلاس ۱۰۱ - ریاضی", "href": "#", "active": true }
+          { "text": "کلاس نهم توکل - زبان انگلیسی", "href": "#", "active": true }
       ]
   },
   "students": [
-      { "id": "st_1", "name": "علی رضایی", "avatar": "https://ui-avatars.com/api/?name=Ali+Rezaei&background=random" },
-      { "id": "st_2", "name": "محمد محمدی", "avatar": "https://ui-avatars.com/api/?name=Mohammad+M&background=random" },
-      { "id": "st_3", "name": "سارا امینی", "avatar": "https://ui-avatars.com/api/?name=Sara+Amini&background=random" },
-      { "id": "st_4", "name": "کیارش رستمی", "avatar": "https://ui-avatars.com/api/?name=Kiarash+R&background=random" }
+        {
+          "id": "st_1",
+          "name": "امیرحسین آلبوعطوی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Amirhossein+Alboatvi&background=random"
+        },
+        {
+          "id": "st_2",
+          "name": "امیرحسین اسکندری",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Amirhossein+Eskandari&background=random"
+        },
+        {
+          "id": "st_3",
+          "name": "محمدامین امیدوار",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadamin+Omidvar&background=random"
+        },
+        {
+          "id": "st_4",
+          "name": "محمدحسین انصاری",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadhossein+Ansari&background=random"
+        },
+        {
+          "id": "st_5",
+          "name": "نیما انوری",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Nima+Anvari&background=random"
+        },
+        {
+          "id": "st_6",
+          "name": "امیرحسین اولادباغی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Amirhossein+Oladbaghi&background=random"
+        },
+        {
+          "id": "st_7",
+          "name": "عرفان باوندی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Erfan+Bavandi&background=random"
+        },
+        {
+          "id": "st_8",
+          "name": "آریا باوی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Arya+Bavi&background=random"
+        },
+        {
+          "id": "st_9",
+          "name": "محمد بچاری زاده",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammad+Bacharizadeh&background=random"
+        },
+        {
+          "id": "st_10",
+          "name": "محمدجواد بچاری عجمی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadjavad+Bachari&background=random"
+        },
+        {
+          "id": "st_11",
+          "name": "شهاب بدوی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Shahab+Badavi&background=random"
+        },
+        {
+          "id": "st_12",
+          "name": "سیدمحمد مهدی بنی هاشمی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=SeyedMohammad+Banihashemi&background=random"
+        },
+        {
+          "id": "st_13",
+          "name": "امیرحسین بهبهانی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Amirhossein+Behbahani&background=random"
+        },
+        {
+          "id": "st_14",
+          "name": "طاها پاک نیت",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Taha+Pakniyat&background=random"
+        },
+        {
+          "id": "st_15",
+          "name": "علیرضا پولک کش",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Alireza+Polakkesh&background=random"
+        },
+        {
+          "id": "st_16",
+          "name": "ایلیا حردانی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Iliya+Hardani&background=random"
+        },
+        {
+          "id": "st_17",
+          "name": "محمدجواد حسینی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadjavad+Hosseini&background=random"
+        },
+        {
+          "id": "st_18",
+          "name": "رضا حسینی فخر",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Reza+HosseiniFakhr&background=random"
+        },
+        {
+          "id": "st_19",
+          "name": "محمدمتین حیدری",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadmatin+Heydari&background=random"
+        },
+        {
+          "id": "st_20",
+          "name": "حسین خوش اندام",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Hossein+Khoshandam&background=random"
+        },
+        {
+          "id": "st_21",
+          "name": "مهدی خیام زاده سواری نژاد",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mehdi+Khayamzadeh&background=random"
+        },
+        {
+          "id": "st_22",
+          "name": "علی دوستانی فر",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Ali+Doostanifar&background=random"
+        },
+        {
+          "id": "st_23",
+          "name": "صدرا سپهری",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Sadra+Sepehri&background=random"
+        },
+        {
+          "id": "st_24",
+          "name": "حسین شجاع",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Hossein+Shoja&background=random"
+        },
+        {
+          "id": "st_25",
+          "name": "محمدرضا شریعت",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadreza+Shariat&background=random"
+        },
+        {
+          "id": "st_26",
+          "name": "علی اکبر شریفی اصیل",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Aliakbar+Sharifi&background=random"
+        },
+        {
+          "id": "st_27",
+          "name": "امیرعلی شفائیان",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Amirali+Shafaian&background=random"
+        },
+        {
+          "id": "st_28",
+          "name": "حسین صادقی پاک",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Hossein+Sadeghi&background=random"
+        },
+        {
+          "id": "st_29",
+          "name": "محمد صالحی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammad+Salehi&background=random"
+        },
+        {
+          "id": "st_30",
+          "name": "پرهام ضامن دوست",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Parham+Zamendoost&background=random"
+        },
+        {
+          "id": "st_31",
+          "name": "حسین طاهری نیا",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Hossein+Taherinia&background=random"
+        },
+        {
+          "id": "st_32",
+          "name": "محمدرضا عچرش",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadreza+Ochrash&background=random"
+        },
+        {
+          "id": "st_33",
+          "name": "محمدعلی عیدانی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadali+Eidani&background=random"
+        },
+        {
+          "id": "st_34",
+          "name": "ابوالفضل قانعیان پور",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Abolfazl+Ghaneian&background=random"
+        },
+        {
+          "id": "st_35",
+          "name": "ابوالفضل قریشوندی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Abolfazl+Ghoreishvandi&background=random"
+        },
+        {
+          "id": "st_36",
+          "name": "شهاب قنواتی محمدی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Shahab+Ghanavati&background=random"
+        },
+        {
+          "id": "st_37",
+          "name": "میلاد کاشی ساز",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Milad+Kashisaz&background=random"
+        },
+        {
+          "id": "st_38",
+          "name": "سیدبنیامین کرمی",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Seyedbenyamin+Karami&background=random"
+        },
+        {
+          "id": "st_39",
+          "name": "محمدسجاد گزنی",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadsajad+Gazni&background=random"
+        },
+        {
+          "id": "st_40",
+          "name": "امیرعباس لامی نژاد",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Amirabbas+Laminejad&background=random"
+        },
+        {
+          "id": "st_41",
+          "name": "سیدمحمدعلی محفوظیان نژاد",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Seyedmohammadali+Mahfoozian&background=random"
+        },
+        {
+          "id": "st_42",
+          "name": "کاوه محمدیان",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Kaveh+Mohammadian&background=random"
+        },
+        {
+          "id": "st_43",
+          "name": "آرین محمودی کمک",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Arian+Mahmoodi&background=random"
+        },
+        {
+          "id": "st_44",
+          "name": "عرفان مردان",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Erfan+Mardan&background=random"
+        },
+        {
+          "id": "st_45",
+          "name": "محمدحسین مطوری",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadhossein+Matoori&background=random"
+        },
+        {
+          "id": "st_46",
+          "name": "محمدمهدی ملک",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Mohammadmahdi+Malek&background=random"
+        },
+        {
+          "id": "st_47",
+          "name": "عبدالله منصوریان",
+          "class": "هفتم - ۲",
+          "avatar": "https://ui-avatars.com/api/?name=Abdollah+Mansourian&background=random"
+        },
+        {
+          "id": "st_48",
+          "name": "امیرحسین منظری",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Amirhossein+Manzari&background=random"
+        },
+        {
+          "id": "st_49",
+          "name": "پارسا مهرجو",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Parsa+Mehrjoo&background=random"
+        },
+        {
+          "id": "st_50",
+          "name": "امیرمحمد وفائیان",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Amirmohammad+Vafaian&background=random"
+        },
+        {
+          "id": "st_51",
+          "name": "ماهان یاسین زاده",
+          "class": "نهم - توکل",
+          "avatar": "https://ui-avatars.com/api/?name=Mahan+Yasinzadeh&background=random"
+        }
   ],
   "exams": [
       { 
@@ -187,34 +489,63 @@ export const weeklyScheduleData = {
 
 // ... (دیتای قبلی) ...
 
+// js/store.js
+
+// ... (سایر دیتاها مثل teacherClasses و ... سر جای خود بمانند) ...
+
 export const allStudentsData = [
-    { id: "st_1", row_number: 1, full_name: "اسکندری امیرحسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_2", row_number: 2, full_name: "آلبوعطوی امیرحسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_3", row_number: 3, full_name: "انصاری محمدحسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_4", row_number: 4, full_name: "بدوی شهاب", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_5", row_number: 5, full_name: "بنی هاشمی سیدمحمد مهدی", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_6", row_number: 6, full_name: "بهبهانی امیرحسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_7", row_number: 7, full_name: "پاک نیت طاها", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_8", row_number: 8, full_name: "پولک کش علیرضا", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_9", row_number: 9, full_name: "حردانی ایلیا", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_10", row_number: 10, full_name: "حسینی محمدجواد", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_11", row_number: 11, full_name: "حیدری محمدمتین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_12", row_number: 12, full_name: "خیام زاده سواری نژاد مهدی", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_13", row_number: 13, full_name: "دوستانی فر علی", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_14", row_number: 14, full_name: "سپهری صدرا", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_15", row_number: 15, full_name: "شجاع حسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_16", row_number: 16, full_name: "صادقی پاک حسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_17", row_number: 17, full_name: "صالحی محمد", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_18", row_number: 18, full_name: "طاهری نیا حسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_19", row_number: 19, full_name: "عچرش محمدرضا", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_20", row_number: 20, full_name: "قریشوندی ابوالفضل", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_21", row_number: 21, full_name: "کرمی سیدبنیامین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_22", row_number: 22, full_name: "مردان عرفان", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_23", row_number: 23, full_name: "منظری امیرحسین", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_24", row_number: 24, full_name: "مهرجو پارسا", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_25", row_number: 25, full_name: "وفائیان امیرمحمد", grade_label: "نهم", grade_color: "blue" },
-    { id: "st_26", row_number: 26, full_name: "یاسین زاده ماهان", grade_label: "نهم", grade_color: "blue" }
-  ]
+    { id: "st_1", row_number: 1, full_name: "آلبوعطوی امیرحسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_2", row_number: 2, full_name: "اسکندری امیرحسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_3", row_number: 3, full_name: "امیدوار محمدامین", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_4", row_number: 4, full_name: "انصاری محمدحسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_5", row_number: 5, full_name: "انوری نیما", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_6", row_number: 6, full_name: "اولادباغی امیرحسین", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_7", row_number: 7, full_name: "باوندی عرفان", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_8", row_number: 8, full_name: "باوی آریا", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_9", row_number: 9, full_name: "بچاری زاده محمد", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_10", row_number: 10, full_name: "بچاری عجمی محمدجواد", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_11", row_number: 11, full_name: "بدوی شهاب", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_12", row_number: 12, full_name: "بنی هاشمی سیدمحمد مهدی", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_13", row_number: 13, full_name: "بهبهانی امیرحسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_14", row_number: 14, full_name: "پاک نیت طاها", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_15", row_number: 15, full_name: "پولک کش علیرضا", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_16", row_number: 16, full_name: "حردانی ایلیا", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_17", row_number: 17, full_name: "حسینی محمدجواد", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_18", row_number: 18, full_name: "حسینی فخر رضا", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_19", row_number: 19, full_name: "حیدری محمدمتین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_20", row_number: 20, full_name: "خوش اندام حسین", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_21", row_number: 21, full_name: "خیام زاده سواری نژاد مهدی", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_22", row_number: 22, full_name: "دوستانی فر علی", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_23", row_number: 23, full_name: "سپهری صدرا", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_24", row_number: 24, full_name: "شجاع حسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_25", row_number: 25, full_name: "شریعت محمدرضا", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_26", row_number: 26, full_name: "شریفی اصیل علی اکبر", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_27", row_number: 27, full_name: "شفائیان امیرعلی", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_28", row_number: 28, full_name: "صادقی پاک حسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_29", row_number: 29, full_name: "صالحی محمد", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_30", row_number: 30, full_name: "ضامن دوست پرهام", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_31", row_number: 31, full_name: "طاهری نیا حسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_32", row_number: 32, full_name: "عچرش محمدرضا", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_33", row_number: 33, full_name: "عیدانی محمدعلی", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_34", row_number: 34, full_name: "قانعیان پور ابوالفضل", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_35", row_number: 35, full_name: "قریشوندی ابوالفضل", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_36", row_number: 36, full_name: "قنواتی محمدی شهاب", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_37", row_number: 37, full_name: "کاشی ساز میلاد", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_38", row_number: 38, full_name: "کرمی سیدبنیامین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_39", row_number: 39, full_name: "گزنی محمدسجاد", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_40", row_number: 40, full_name: "لامی نژاد امیرعباس", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_41", row_number: 41, full_name: "محفوظیان نژاد سیدمحمدعلی", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_42", row_number: 42, full_name: "محمدیان کاوه", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_43", row_number: 43, full_name: "محمودی کمک آرین", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_44", row_number: 44, full_name: "مردان عرفان", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_45", row_number: 45, full_name: "مطوری محمدحسین", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_46", row_number: 46, full_name: "ملک محمدمهدی", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_47", row_number: 47, full_name: "منصوریان عبدالله", grade_label: "هفتم - ۲", grade_color: "blue" },
+    { id: "st_48", row_number: 48, full_name: "منظری امیرحسین", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_49", row_number: 49, full_name: "مهرجو پارسا", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_50", row_number: 50, full_name: "وفائیان امیرمحمد", grade_label: "نهم - توکل", grade_color: "purple" },
+    { id: "st_51", row_number: 51, full_name: "یاسین زاده ماهان", grade_label: "نهم - توکل", grade_color: "purple" }
+];
 
 // js/store.js
 

@@ -10,21 +10,18 @@
     <div class="main-content">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h1>مدیریت کلاس‌ها</h1>
-            <button style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">
-                + کلاس جدید
-            </button>
         </div>
 
         <div class="grid-container" id="classes-grid">
-            <a href="class-detail.html" class="card card-blue">
+            <a onclick="localStorage.setItem('class','نهم - توکل')" href="class-detail.html" class="card card-blue">
                 <h3>زبان انگلیسی - نهم توکل </h3>
                 <p>👤 ۲۶ دانش‌آموز</p>
                 <p>📈 میانگین: ۱۶.۵</p>
             </a>
 
-            <a href="#" class="card card-purple">
+            <a onclick="localStorage.setItem('class','هفتم - ۲')" href="class-detail.html" class="card card-purple">
                 <h3>زبان انگلیسی - هفتم دو </h3>
-                <p>👤 ۲۶ دانش‌آموز</p>
+                <p>👤 ۲۵ دانش‌آموز</p>
                 <p>⚠️ نیاز به بررسی</p>
             </a>
 
