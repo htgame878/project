@@ -46,7 +46,7 @@ export const classDetailData = {
       "title": "کلاس نهم توکل - زبان انگلیسی",
       "breadcrumb": [
           { "text": "لیست کلاس‌ها", "href": "classes.html" },
-          { "text": localStorage.getItem("class")=="نهم - توکل"?"کلاس نهم توکل - زبان انگلیسی":"هفتم دو", "href": "#", "active": true }
+          { "text": localStorage.getItem("class")=="نهم - توکل"?"کلاس نهم توکل - زبان انگلیسی":"هفتم دو - زبان انگلیسی", "href": "#", "active": true }
       ]
   },
   "students": [
@@ -360,7 +360,7 @@ export const classDetailData = {
   "exams": [
     { 
         "id": "ex_1", 
-        "title": "آزمون زبان انگلیسی - نهایی", 
+        "title": "آزمون زبان انگلیسی - تعیین سطح", 
         "class": "نهم - توکل", 
         "date": "۱۴۰۴/۰۹/۲۵", 
         "status": "closed", 
@@ -387,7 +387,7 @@ export const classDetailData = {
       },
       { 
         "id": "ex_1", 
-        "title": "آزمون زبان انگلیسی - نهایی", 
+        "title": "آزمون زبان انگلیسی - تعیین سطح", 
         "class": "هفتم - ۲", 
         "date": "۱۴۰۴/۰۹/۲۵", 
         "status": "closed", 
