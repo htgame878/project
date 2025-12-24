@@ -46,7 +46,7 @@ export const classDetailData = {
       "title": "کلاس نهم توکل - زبان انگلیسی",
       "breadcrumb": [
           { "text": "لیست کلاس‌ها", "href": "classes.html" },
-          { "text": localStorage.getItem("class")=="نهم - توکل"?"کلاس نهم توکل - زبان انگلیسی":"هفتم دو - زبان انگلیسی", "href": "#", "active": true }
+          { "text": localStorage.getItem("class")=="نهم - توکل"?"کلاس نهم توکل - زبان انگلیسی":"کلاس هفتم ۲", "href": "#", "active": true }
       ]
   },
   "students": [
