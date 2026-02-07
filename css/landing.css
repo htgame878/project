@@ -1,7 +1,9 @@
 /* css/landing.css */
 
 /* متغیرها در فایل style.css هستند، اینجا استفاده می‌کنیم */
-
+body{
+    background-image: url("/images/13.jpg") ;background-repeat: no-repeat; background-size: cover
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -207,7 +209,7 @@
 /* Hero Section */
 .hero {
     padding: 80px 0;
-    background: linear-gradient(to bottom, #f3f4f6, #fff);
+    
     overflow: hidden;
 }
 
@@ -216,6 +218,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+
 }
 
 .hero-content {
@@ -231,7 +234,7 @@
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #6b7280;
+    color: #f0f5ff;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -299,7 +302,6 @@
 /* Features Section */
 .section-features {
     padding: 80px 0;
-    background: white;
 }
 
 .section-title {
@@ -383,3 +385,4 @@
         height: 300px;
     }
 }
+

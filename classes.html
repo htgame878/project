@@ -1,38 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>لیست کلاس‌ها</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="main-content">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h1>مدیریت کلاس‌ها</h1>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>مدیریت کلاس‌ها</h1>
+      </div>
+      <section class="filter-section">
+        <div class="filter-wrapper">
+          <label for="categoryFilter" class="filter-label"
+            >دسته بندی کلاس‌ها:</label
+          >
+          <div class="select-wrapper">
+            <select id="categoryFilter" class="filter-select">
+              <option value="all">نمایش همه</option>
+              <option value="9">نهم</option>
+              <option value="8">هشتم</option>
+              <option value="7">هفتم</option>
+            </select>
+          </div>
         </div>
+      </section>
+      <div class="grid-container" id="classes-grid">
+        <article class="class-card" data-category="8">
+          <a
+            onclick="localStorage.setItem('class', 'نهم - توکل')"
+            href="class-detail.html"
+            class="card card-blue"
+          >
+            <h3>زبان انگلیسی - نهم توکل</h3>
+            <p>👤 ۲۶ دانش‌آموز</p>
+            <p>📈 میانگین: ۱۶.۵</p>
+          </a>
+        </article>
+        <article class="class-card" data-category="7">
+          <a
+            onclick="localStorage.setItem('class', 'هفتم - ۲')"
+            href="class-detail.html"
+            class="card card-purple"
+          >
+            <h3>زبان انگلیسی - هفتم دو</h3>
+            <p>👤 ۲۵ دانش‌آموز</p>
+            <p>⚠️ نیاز به بررسی</p>
+          </a>
+        </article>
 
-        <div class="grid-container" id="classes-grid">
-            <a onclick="localStorage.setItem('class','نهم - توکل')" href="class-detail.html" class="card card-blue">
-                <h3>زبان انگلیسی - نهم توکل </h3>
-                <p>👤 ۲۶ دانش‌آموز</p>
-                <p>📈 میانگین: ۱۶.۵</p>
-            </a>
-
-            <a onclick="localStorage.setItem('class','هفتم - ۲')" href="class-detail.html" class="card card-purple">
-                <h3>زبان انگلیسی - هفتم دو </h3>
-                <p>👤 ۲۵ دانش‌آموز</p>
-                <p>⚠️ نیاز به بررسی</p>
-            </a>
-
-            <div class="card add-card" onclick="alert('باز کردن مودال...')">
-                <span style="font-size: 2rem;">+</span>
-                <span>افزودن کلاس</span>
-            </div>
+        <div class="card add-card" onclick="alert('باز کردن مودال...')">
+          <span style="font-size: 2rem">+</span>
+          <span>افزودن کلاس</span>
         </div>
+      </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const filterSelect = document.getElementById("categoryFilter");
+        const allCards = document.querySelectorAll(".class-card");
 
+        filterSelect.addEventListener("change", (e) => {
+          const selectedCategory = e.target.value;
+
+          allCards.forEach((card) => {
+          
+            const cardCategory = card.getAttribute("data-category");
+
+            if (
+              selectedCategory === "all" ||
+              cardCategory === selectedCategory
+            ) {
+             
+              card.classList.remove("hide");
+              card.classList.add("show");
+            } else {
+              card.classList.remove("show");
+              card.classList.add("hide");
+            }
+          });
+        });
+      });
+    </script>
     <script src="js/layout.js"></script>
-    
-    </body>
+  </body>
 </html>

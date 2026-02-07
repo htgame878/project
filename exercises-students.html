@@ -30,8 +30,125 @@
                 </div>
 
         </div>
+        
     </div>
+    <div id="generatorModal" class="modal-overlay">
+        <div class="modal-box">
+            
+            <div class="modal-header">
+                <div class="header-top">
+                    <h2 style="margin:0; font-size:1.2em;">ساخت تمرین هوشمند</h2>
+                    <button class="close-btn" onclick="closeGeneratorModal()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
 
+                <div class="input-group">
+                    <input type="text" id="topicInput" placeholder="موضوع تمرین (مثلاً: مشتق)">
+                    <select id="difficultySelect">
+                        <option value="easy">آسان</option>
+                        <option value="medium" selected>متوسط</option>
+                        <option value="hard">سخت</option>
+                    </select>
+                    <button class="btn-generate" onclick="generateExercise()">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        ساخت
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="exercises-stream" id="streamContainer">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        // --- مدیریت مودال ---
+        const modal = document.getElementById('generatorModal');
+
+        function openGeneratorModal() {
+            modal.classList.add('open');
+        }
+
+        function closeGeneratorModal() {
+            modal.classList.remove('open');
+        }
+
+        // بستن مودال با کلیک روی فضای خالی اطراف
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeGeneratorModal();
+            }
+        });
+
+
+        // --- منطق تولید تمرین (از کد قبلی شما) ---
+        let exerciseCount = 0;
+
+        function generateExercise() {
+            const container = document.getElementById('streamContainer');
+            const topic = document.getElementById('topicInput').value || 'ریاضی عمومی';
+            const difficulty = document.getElementById('difficultySelect').value;
+
+            // ساخت و نمایش اسکلتون
+            const skeletonWrapper = document.createElement('div');
+            skeletonWrapper.innerHTML = `
+                <div class="skeleton-card">
+                    <div class="skeleton s-header"></div>
+                    <div class="skeleton s-line"></div>
+                    <div class="skeleton s-line"></div>
+                    <div class="skeleton s-line-short"></div>
+                    <div class="skeleton s-footer"></div>
+                </div>
+            `;
+            container.prepend(skeletonWrapper);
+
+            // اسکرول خودکار به بالا برای دیدن لودینگ
+            container.scrollTop = 0;
+
+            setTimeout(() => {
+                skeletonWrapper.remove();
+                exerciseCount++;
+
+                let badgeClass = '';
+                let badgeText = '';
+                if(difficulty === 'easy') { badgeClass = 'badge-easy'; badgeText = 'آسان'; }
+                else if(difficulty === 'medium') { badgeClass = 'badge-medium'; badgeText = 'متوسط'; }
+                else { badgeClass = 'badge-hard'; badgeText = 'سخت'; }
+
+                const cardData = {
+                    title: `تمرین سری ${exerciseCount}: ${topic}`,
+                    body: `این یک تمرین تولید شده برای مبحث <strong>${topic}</strong> است...`,
+                    badgeClass: badgeClass,
+                    badgeText: badgeText
+                };
+
+                const cardHTML = `
+                    <div class="exercise-card">
+                        <div class="card-header">
+                            <span class="card-title">${cardData.title}</span>
+                            <span class="badge ${cardData.badgeClass}">${cardData.badgeText}</span>
+                        </div>
+                        <div class="card-body">
+                            <p>${cardData.body}</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i> حذف</button>
+                            <button class="action-btn"><i class="fa-solid fa-pen"></i> ویرایش</button>
+                            <button class="action-btn btn-add"><i class="fa-solid fa-plus"></i> افزودن</button>
+                        </div>
+                    </div>
+                `;
+
+                const cardWrapper = document.createElement('div');
+                cardWrapper.innerHTML = cardHTML;
+                container.prepend(cardWrapper.firstElementChild);
+
+            }, 2000);
+        }
+    </script>
     <script src="js/layout.js"></script>
     <script type="module" src="js/exercises.js"></script>
 </body>

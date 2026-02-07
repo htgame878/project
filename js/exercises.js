@@ -38,7 +38,7 @@ class ExerciseManager {
                 // اگر نیاز به تمرین دارد
                 reasonHtml = `<div class="st-reason"><i class="fa-solid fa-triangle-exclamation"></i> ${st.reason}</div>`;
                 actionBtn = `
-                    <button class="btn-action btn-primary-action" onclick="alert('ایجاد تمرین برای ${st.name}')">
+                    <button class="btn-action btn-primary-action" onclick="openGeneratorModal()">
                         <span class="fas fa-plus"></span> ایجاد تمرین
                     </button>
                 `;

@@ -5,11 +5,67 @@
     --sidebar-width: 260px;
     
 }
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter-VariableFont_opsz\,wght.ttf");
+}
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tahoma', sans-serif; text-decoration: none; }
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad[KSHD\,wght].ttf");
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family:  'Inter','Estedad'; text-decoration: none; }
 
-body {  background: var(--bg-body); direction: rtl; }
+body {  background: var(--bg-body);background-image: url("/images/8.jpg") ;background-repeat: no-repeat; background-size: cover; direction: rtl; }
 
+/* تیتر اصلی */
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* تیتر بخش‌ها */
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* نام دانش‌آموزان و لیست‌ها */
+.student-name, .list-item {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* متن بدنه و سوالات آزمون */
+.body-text, .exam-question {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8; /* انتخاب میانگین برای خوانایی بهتر */
+}
+
+/* دکمه‌ها و منوهای سایت */
+.btn-label, .nav-menu {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* اعداد و نمرات */
+.numeric-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* توضیحات فرعی و ریز */
+.caption-text {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.5;
+}
 /* سایدبار */
 .sidebar {
     width: var(--sidebar-width);
@@ -87,4 +143,106 @@ body {  background: var(--bg-body); direction: rtl; }
 .st-text-details {
     display: flex;
     flex-direction: column;
+}
+
+
+/* --- استایل بخش فیلتر --- */
+.filter-section {
+    margin: 2rem 0;
+    padding: 0 1rem;
+    display: flex;
+}
+
+.filter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 10px 20px;
+    border-radius: 50px; /* گرد کردن گوشه‌ها */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    font-family: inherit; /* فونت وزیر یا هر چیزی که دارید */
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    border-color: #007bff; /* رنگ آبی هنگام کلیک */
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+/* --- استایل شبکه کلاس‌ها (Grid) --- */
+.classes-grid {
+    display: grid;
+    /* این خط جادویی است: خودش تعداد ستون‌ها را بر اساس سایز صفحه تنظیم می‌کند */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* --- استایل کارت کلاس --- */
+.class-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* برای چیدمان داخلی */
+    flex-direction: column;
+}
+
+.class-card:hover {
+    transform: translateY(-5px); /* حرکت به بالا هنگام هاور */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* استایل برچسب‌های دسته بندی */
+.badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #eee;
+    color: #555;
+}
+
+/* انیمیشن محو شدن برای فیلتر */
+.class-card.hide {
+    display: none;
+}
+
+.class-card.show {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

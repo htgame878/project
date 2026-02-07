@@ -519,7 +519,7 @@ export const weeklyScheduleData = {
     "sun": [null, null, null],
     "mon": [
         null,
-        { class_id: "c_103", name: "هندسه دوازدهم", location: "کلاس ۳۰۵" },
+        null,
         null
     ],
     "tue": [null, null, null],

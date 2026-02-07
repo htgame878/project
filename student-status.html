@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/student-status.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="dashboard-list main-content">
+      <div class="student-card">
+        <div class="student-info">
+          <img
+            src="https://via.placeholder.com/50"
+            alt="Avatar"
+            class="avatar"
+          />
+          <div>
+            <h3 class="student-name">علی رضایی</h3>
+            <span class="father-name">نام پدر: محمد</span>
+          </div>
+        </div>
+        <div class="status-badge status-safe">
+          <span class="icon">✔</span>
+          روند مثبت
+        </div>
+      </div>
+
+      <div class="student-card">
+        <div class="student-info">
+          <img
+            src="https://via.placeholder.com/50"
+            alt="Avatar"
+            class="avatar"
+          />
+          <div>
+            <h3 class="student-name">حسین کمالی</h3>
+            <span class="father-name">نام پدر: رضا</span>
+          </div>
+        </div>
+
+        <button
+          class="status-badge status-critical open-modal-btn"
+          data-name="حسین کمالی"
+          data-risk="70"
+          data-analysis="روند نزولی نمرات در ۳ هفته اخیر مشاهده شده است. عدم تحویل تمارین ریاضی تاثیر منفی داشته است."
+        >
+          <div class="status-content">
+            <span class="status-title">نیاز به بررسی</span>
+            <span class="status-sub">در معرض خطر</span>
+          </div>
+          <span class="icon-bell">🔔</span>
+        </button>
+      </div>
+
+      <div class="student-card">
+        <div class="student-info">
+          <img
+            src="https://via.placeholder.com/50"
+            alt="Avatar"
+            class="avatar"
+          />
+          <div>
+            <h3 class="student-name">سارا احمدی</h3>
+            <span class="father-name">نام پدر: علی</span>
+          </div>
+        </div>
+        <div class="status-badge status-safe">
+          <span class="icon">✔</span>
+          روند مثبت
+        </div>
+      </div>
+    </div>
+
+    <div id="analysisModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="modalTitle">تحلیل هوشمند</h3>
+          <span class="close-btn">&times;</span>
+        </div>
+
+        <div class="modal-body">
+          <div class="analysis-box">
+            <p id="modalText">متن تحلیل اینجا قرار می‌گیرد...</p>
+          </div>
+
+          <div class="risk-section">
+            <span>احتمال افت تحصیلی:</span>
+            <span id="modalRiskValue" class="risk-value">0%</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="actionBtn" class="primary-btn">
+            <span class="btn-text">تولید برنامه کمکی هوشمند</span>
+            <span class="btn-spinner">⌛</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // گرفتن المان‌ها
+      const modal = document.getElementById("analysisModal");
+      const closeBtn = document.querySelector(".close-btn");
+      const actionBtn = document.getElementById("actionBtn");
+      const openBtns = document.querySelectorAll(".open-modal-btn");
+
+      // المان‌های داخلی مودال برای پر کردن محتوا
+      const modalTitle = document.getElementById("modalTitle");
+      const modalText = document.getElementById("modalText");
+      const modalRisk = document.getElementById("modalRiskValue");
+      const btnText = actionBtn.querySelector(".btn-text");
+      const btnSpinner = actionBtn.querySelector(".btn-spinner");
+
+      // 1. باز کردن مودال و پر کردن اطلاعات
+      openBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // خواندن دیتا از ویژگی‌های data-* دکمه کلیک شده
+          const name = this.getAttribute("data-name");
+          const risk = this.getAttribute("data-risk");
+          const analysis = this.getAttribute("data-analysis");
+
+          // تزریق به مودال
+          modalTitle.textContent = `تحلیل وضعیت ${name}`;
+          modalText.textContent = analysis;
+          modalRisk.textContent = `${risk}%`;
+
+          // نمایش مودال
+          modal.classList.add("active");
+
+          // ریست کردن دکمه به حالت اولیه (اگر قبلا سبز شده بود)
+          resetButton();
+        });
+      });
+
+      // 2. بستن مودال
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+
+      // بستن با کلیک روی فضای خالی (Overlay)
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+
+      // 3. مدیریت دکمه اکشن (شبیه‌سازی درخواست سرور)
+      actionBtn.addEventListener("click", function () {
+        // اگر دکمه قبلا زده شده یا در حال لود است، کاری نکن
+        if (this.disabled) return;
+
+        // --- حالت Loading ---
+        this.disabled = true; // غیرفعال کردن دکمه
+        this.style.backgroundColor = "#90CAF9"; // رنگ غیرفعال
+        btnText.textContent = "در حال ساخت برنامه...";
+        btnSpinner.style.display = "block"; // نمایش اسپینر
+
+        // شبیه‌سازی تاخیر 2 ثانیه‌ای (مثل درخواست به سرور)
+        setTimeout(() => {
+          // --- حالت Success ---
+          this.style.backgroundColor = "#4CAF50"; // سبز موفقیت
+          btnText.textContent = "برنامه با موفقیت ثبت شد";
+          btnSpinner.style.display = "none";
+
+          // بستن خودکار مودال بعد از 1.5 ثانیه
+          setTimeout(() => {
+            modal.classList.remove("active");
+            resetButton(); // برگرداندن دکمه به حالت اول
+          }, 1500);
+        }, 2000);
+      });
+
+      // تابع کمکی برای ریست کردن دکمه
+      function resetButton() {
+        actionBtn.disabled = false;
+        actionBtn.style.backgroundColor = "#1976D2";
+        btnText.textContent = "تولید برنامه کمکی هوشمند";
+        btnSpinner.style.display = "none";
+      }
+    });
+  </script>
+  <script src="js/layout.js"></script>
+</html>

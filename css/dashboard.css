@@ -52,13 +52,27 @@
 .green .kpi-icon { background: #dcfce7; color: #16a34a; }
 
 /* --- Shortcuts --- */
-.section-box { background: white; padding: 25px; border-radius: 20px; border: 1px solid #f1f5f9; }
-.section-header { margin-bottom: 20px; }
+.section-box { background: rgba(255, 255, 255, 0.381); padding: 25px; border-radius: 20px;  }
+.section-header { margin-bottom: 20px;text-align: center; }
 .shortcuts-grid { display: flex; gap: 20px; flex-wrap: wrap; }
 .shortcut-card {
-    flex: 1; min-width: 140px; background: #f8fafc; padding: 20px; border-radius: 12px;
-    display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center;
-    border: 1px solid #e2e8f0; transition: 0.2s; color: #475569;
+    flex: 1;
+    min-width: 140px;
+    background: #eff5fa;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: 0.2s;
+    color: #475569;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 .shortcut-card i { font-size: 2rem; color: var(--primary); }
 .shortcut-card:hover { background: white; border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
