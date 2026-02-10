@@ -34,7 +34,7 @@ function createSidebar() {
                 <img class="icon-template" src="icon/تمرین ها.svg" />
  تمرین ها
             </a>
-             <a href="teacher-notes.html" class="nav-item ">
+             <a href="test3.html" class="nav-item ">
                 <img class="icon-template" src="icon/یادداشت ها.svg" />
  یادداشت ها
               </a>
