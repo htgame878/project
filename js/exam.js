@@ -68,7 +68,7 @@ function saveAndLoadList() {
   gradingSection.classList.add("active"); // تریگر انیمیشن CSS
 
   // 3. رندر کردن لیست دانش‌آموزان
-  renderStudents();
+
 }
 
 // --- تابع ۳: برگشت به حالت ویرایش (Action: on_edit) ---
@@ -115,17 +115,18 @@ function renderStudents() {
     }
 
     row.innerHTML = `
-            <div class="student-info">
-                <img src="${st.avatar}" class="avatar" alt="Avatar">
-                <div>
-                    <span class="st-name">${st.name}</span>
-                    <span class="st-father">نام پدر: ${st.father}</span>
-                </div>
-            </div>
-
-            <div class="grading-status">
-                ${actionComponent}
-            </div>
+    <div>
+    <div class="student-info">
+    <img src="${st.avatar}" class="avatar" alt="Avatar">
+    <div>
+    <span class="st-name">${st.name}</span>
+    <span class="st-father">نام پدر: ${st.father}</span>
+    </div>
+    <div class="grading-status">
+    ${actionComponent}
+    </div>
+    </div>
+    </div>
         `;
 
     listContainer.appendChild(row);
@@ -158,7 +159,7 @@ let currentGrades = {}; // مثلا: { 'q1_p1': 2.5, 'q1_p2': 0 }
 // --- ۱. باز کردن مودال ---
 // این تابع باید روی دکمه‌های "شروع تصحیح" در لیست دانش‌آموزان صدا زده شود
 // مثال: onclick="openGradingModal('st_101', 'رضا علوی', '...jpg')"
-function openGradingModal(studentId, studentName, avatarUrl) {
+function openGradingModal(studentId="", studentName="", avatarUrl="") {
   // ریست کردن وضعیت
   currentGrades = {};
   document.getElementById("modalLiveScore").innerText = "0";
@@ -193,20 +194,23 @@ function renderGradingForm() {
     let partsHTML = "";
     q.parts.forEach((part) => {
       partsHTML += `
+                <div class="g-question-card">
+                <div class="g-q-title">${q.title}</div>
                 <div class="g-part-row">
-                    <span class="g-part-label">${part.label} <small style="color:#999">(${part.weight})</small></span>
-                    
-                    <div class="g-options-group">
-                        <button class="g-opt-btn" onclick="ratePart('${part.id}', 'correct', ${part.weight}, this)">
-                            <i class="fa-solid fa-check"></i>
-                        </button>
-                        <button class="g-opt-btn" onclick="ratePart('${part.id}', 'incorrect', ${part.weight}, this)">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                        <button class="g-opt-btn" onclick="ratePart('${part.id}', 'empty', ${part.weight}, this)">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                    </div>
+                <span class="g-part-label">${part.label} <small style="color:#999">(${part.weight})</small></span>
+                
+                <div class="g-options-group">
+                <button class="g-opt-btn" onclick="ratePart('${part.id}', 'correct', ${part.weight}, this)">
+                <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="g-opt-btn" onclick="ratePart('${part.id}', 'incorrect', ${part.weight}, this)">
+                <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button class="g-opt-btn" onclick="ratePart('${part.id}', 'empty', ${part.weight}, this)">
+                <i class="fa-solid fa-minus"></i>
+                </button>
+                </div>
+                </div>
                 </div>
             `;
     });

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نمرات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- استایل‌های پایه --- */
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- کارت مشخصات دانش‌آموز (Sticky) --- */
+        .student-header-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            margin-bottom: 30px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e5e7eb;
+        }
+
+        .st-name { margin: 0; font-size: 1.1rem; font-weight: bold; }
+        .st-detail { font-size: 0.85rem; color: #6b7280; }
+
+        .total-score-box {
+            text-align: center;
+            background: #f9fafb;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .score-val { font-size: 1.5rem; font-weight: bold; color: #4f46e5; }
+        .score-label { font-size: 0.8rem; color: #6b7280; }
+
+        /* --- کارت سوالات --- */
+        .question-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .q-header {
+            background: #f8fafb;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            font-weight: bold;
+            color: #374151;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .q-body {
+            padding: 0 20px;
+        }
+
+        /* --- ردیف زیر سوال --- */
+        .sub-question-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+        .sub-question-row:last-child {
+            border-bottom: none;
+        }
+
+        .sub-q-text {
+            font-size: 0.95rem;
+            color: #1f2937;
+        }
+
+        .sub-q-weight {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-right: 5px;
+        }
+
+        /* --- استایل چک‌باکس سفارشی (نکته کلیدی) --- */
+        .grading-checkbox-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* مخفی کردن چک‌باکس اصلی مرورگر */
+        .grading-checkbox-wrapper input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* ظاهر چک‌باکس (مربع) */
+        .custom-checkmark {
+            height: 32px;
+            width: 32px;
+            background-color: #fff;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* هاور */
+        .grading-checkbox-wrapper:hover .custom-checkmark {
+            border-color: #9ca3af;
+            background-color: #f9fafb;
+        }
+
+        /* حالت تیک خورده (صحیح) */
+        .grading-checkbox-wrapper input:checked ~ .custom-checkmark {
+            background-color: #4CAF50; /* سبز */
+            border-color: #4CAF50;
+        }
+
+        /* آیکون تیک */
+        .custom-checkmark:after {
+            content: "\f00c"; /* کد آیکون FontAwesome */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            display: none;
+        }
+
+        .grading-checkbox-wrapper input:checked ~ .custom-checkmark:after {
+            display: block;
+        }
+
+        /* لیبل وضعیت (کنار چک باکس) */
+        .status-label {
+            margin-left: 10px;
+            font-size: 0.85rem;
+            color: #6b7280;
+            width: 50px;
+            text-align: left;
+        }
+
+        .grading-checkbox-wrapper input:checked ~ .status-label {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* --- دکمه ثبت --- */
+        .submit-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+            text-align: left;
+            padding-left: 50px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="padding-bottom: 80px;">
+        
+        <div class="student-header-card">
+            <div class="student-info">
+                <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar">
+                <div>
+                    <h2 class="st-name">علی محمدی</h2>
+                    <span class="st-detail">کلاس دهم - ریاضی</span>
+                </div>
+            </div>
+            <div class="total-score-box">
+                <div class="score-val" id="totalScoreDisplay">0</div>
+                <div class="score-label">نمره کل</div>
+            </div>
+        </div>
+
+        <div id="questionsList">
+            
+            <div class="question-card">
+                <div class="q-header">
+                    <span>سوال ۱: مبحث تابع</span>
+                    <span>بارم کل: ۵</span>
+                </div>
+                <div class="q-body">
+                    
+                    <div class="sub-question-row">
+                        <div>
+                            <span class="sub-q-text">الف) دامنه تابع را مشخص کنید.</span>
+                            <span class="sub-q-weight">(۲ نمره)</span>
+                        </div>
+                        
+                        <div style="display:flex; align-items:center;">
+                            <span class="status-label" id="label-q1-p1">غلط</span>
+                            <label class="grading-checkbox-wrapper">
+                                <input type="checkbox" class="grade-checkbox" data-score="2" onchange="updateScore(this, 'label-q1-p1')">
+                                <span class="custom-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="sub-question-row">
+                        <div>
+                            <span class="sub-q-text">ب) نمودار را رسم کنید.</span>
+                            <span class="sub-q-weight">(۳ نمره)</span>
+                        </div>
+                        
+                        <div style="display:flex; align-items:center;">
+                            <span class="status-label" id="label-q1-p2">غلط</span>
+                            <label class="grading-checkbox-wrapper">
+                                <input type="checkbox" class="grade-checkbox" data-score="3" onchange="updateScore(this, 'label-q1-p2')">
+                                <span class="custom-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="q-header">
+                    <span>سوال ۲: هندسه</span>
+                    <span>بارم کل: ۴</span>
+                </div>
+                <div class="q-body">
+                    <div class="sub-question-row">
+                        <div>
+                            <span class="sub-q-text">پاسخ نهایی مسئله</span>
+                            <span class="sub-q-weight">(۴ نمره)</span>
+                        </div>
+                        <div style="display:flex; align-items:center;">
+                            <span class="status-label" id="label-q2-p1">غلط</span>
+                            <label class="grading-checkbox-wrapper">
+                                <input type="checkbox" class="grade-checkbox" data-score="4" onchange="updateScore(this, 'label-q2-p1')">
+                                <span class="custom-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="submit-container">
+        <button class="btn-submit" onclick="alert('نمرات ثبت شد!')">ثبت نمرات</button>
+    </div>
+
+    <script>
+        // تابع محاسبه نمره زنده
+        function updateScore(checkbox, labelId) {
+            const label = document.getElementById(labelId);
+            
+            // ۱. تغییر متن کنار چک‌باکس
+            if (checkbox.checked) {
+                label.innerText = "صحیح";
+                label.style.color = "#4CAF50"; // سبز
+            } else {
+                label.innerText = "غلط";
+                label.style.color = "#6b7280"; // خاکستری
+            }
+
+            // ۲. محاسبه مجدد نمره کل
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            // گرفتن تمام چک‌باکس‌ها
+            const checkboxes = document.querySelectorAll('.grade-checkbox');
+            
+            checkboxes.forEach(box => {
+                if (box.checked) {
+                    // اگر تیک خورده بود، نمره‌اش (data-score) را اضافه کن
+                    total += parseFloat(box.getAttribute('data-score'));
+                }
+            });
+
+            // نمایش نمره
+            document.getElementById('totalScoreDisplay').innerText = total;
+        }
+    </script>
+</body>
+</html>

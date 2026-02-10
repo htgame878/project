@@ -2,6 +2,8 @@
 :root {
     --primary: #3b82f6;
     --bg-body: #f3f4f6;
+    --text-default:#fff;
+    --text-alter:#ededed;
     --sidebar-width: 260px;
     
 }
@@ -16,20 +18,22 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; font-family:  'Inter','Estedad'; text-decoration: none; }
 
-body {  background: var(--bg-body);background-image: url("/images/8.jpg") ;background-repeat: no-repeat; background-size: cover; direction: rtl; }
+body {  background: var(--bg-body);background-image: url("/images/8.svg") ;background-repeat: no-repeat; background-size: cover; direction: rtl; }
 
 /* تیتر اصلی */
-h1 {
+.main-title {
     font-size: 32px;
     font-weight: 800;
     line-height: 1.2;
+    color: var(--text-default) !important;
 }
 
 /* تیتر بخش‌ها */
-h2 {
+.part-title {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.4;
+        color: var(--text-default) !important;
 }
 
 /* نام دانش‌آموزان و لیست‌ها */
@@ -37,10 +41,16 @@ h2 {
     font-size: 18px;
     font-weight: 600;
     line-height: 1.5;
+        color: var(--text-default) !important;
 }
-
+.icon-template{
+    width: 30px;
+    display: flex;
+    align-items: center;
+}
 /* متن بدنه و سوالات آزمون */
 .body-text, .exam-question {
+    color: #e9e9e9;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.8; /* انتخاب میانگین برای خوانایی بهتر */
@@ -51,6 +61,7 @@ h2 {
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
+        color: var(--text-default);
 }
 
 /* اعداد و نمرات */
@@ -65,6 +76,7 @@ h2 {
     font-size: 13px;
     font-weight: 300;
     line-height: 1.5;
+    color: var(--text-alter);
 }
 /* سایدبار */
 .sidebar {

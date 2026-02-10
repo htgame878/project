@@ -2,7 +2,7 @@
 
 /* متغیرها در فایل style.css هستند، اینجا استفاده می‌کنیم */
 body{
-    background-image: url("/images/13.jpg") ;background-repeat: no-repeat; background-size: cover
+    background-image: url("/images/13.svg") ;background-repeat: no-repeat; background-size: cover
 }
 .container {
     max-width: 1200px;
@@ -12,7 +12,12 @@ body{
 
 /* Navbar */
 /* css/landing.css */
-
+.icon-login{
+    width: 25px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
 /* --- تنظیمات کلی نوار ناوبری --- */
 .landing-navbar {
     background-color: rgba(255, 255, 255, 0.95); /* کمی شیشه‌ای */
@@ -60,13 +65,22 @@ body{
     margin: 0;
     padding: 0;
 }
+.logo-title{
+    font-size: 14px;
+    color: var(--primary);
+    line-height: 15px;
+}
 
 .nav-link {
     color: #4b5563;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 15px;
     transition: color 0.3s;
     position: relative;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
 }
 
 .nav-link:hover {
@@ -76,6 +90,7 @@ body{
 /* دکمه ورود */
 .nav-btn {
     padding: 10px 24px !important;
+    font-size: 15px;
 }
 
 /* دکمه همبرگری (در دسکتاپ مخفی) */
@@ -187,6 +202,7 @@ body{
 
 .btn-primary:hover {
     background: #2563eb;
+    
     transform: translateY(-2px);
 }
 
@@ -198,7 +214,7 @@ body{
 
 .btn-outline:hover {
     border-color: var(--primary);
-    color: var(--primary);
+    color: var(--primary) !important;
 }
 
 .btn-lg {
@@ -250,7 +266,7 @@ body{
     font-weight: bold;
 }
 
-.text-primary { color: var(--primary); }
+.text-primary { color: var(--primary); font-size: 46px; }
 
 /* Hero Image Abstract */
 .hero-image {
@@ -291,8 +307,8 @@ body{
     animation: float 3s ease-in-out infinite;
 }
 
-.card-1 { top: 20%; right: -20px; }
-.card-2 { bottom: 20%; left: -20px; animation-delay: 1.5s; }
+.card-1 { top: 20%; right: -30px; }
+.card-2 { bottom: 15%; left: -20px; animation-delay: 1.5s; }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -301,9 +317,12 @@ body{
 
 /* Features Section */
 .section-features {
-    padding: 80px 0;
+    padding: 20px 0 140px 0;
 }
-
+.abstract-shape{
+    width: 425px;
+    height: 425px;
+}
 .section-title {
     text-align: center;
     margin-bottom: 50px;

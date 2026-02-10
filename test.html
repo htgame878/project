@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پنل تحلیل هوشمند - پیش‌نمایش</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/exams.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .analysis-container {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        float: left;
+        padding: 40px 20px;
+      }
+
+      /* === 1. استایل باکس‌های بالا (آپلود فایل) === */
+      .upload-grid {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+        justify-content: center;
+      }
+
+      .upload-card {
+        background: #fff;
+        border-radius: 30px;
+        width: 100%;
+        height: 220px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 3px solid transparent;
+      }
+
+      .upload-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        border-color: #4f46e5;
+      }
+
+      .upload-card label {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #555;
+      }
+
+      .upload-icon {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+        color: #cbd5e1;
+        transition: color 0.3s;
+      }
+
+      .upload-card:hover .upload-icon {
+        color: #4f46e5;
+      }
+
+      .file-name-display {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #4f46e5;
+        font-weight: bold;
+        padding: 0 10px;
+        text-align: center;
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* === 2. استایل ورودی‌های وسط (نوارها) === */
+      .inputs-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+      }
+
+      .input-pill {
+        background: #fff;
+        border-radius: 50px;
+        padding: 10px 25px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+        border: 1px solid transparent;
+      }
+
+      .input-pill:focus-within {
+        box-shadow: 0 5px 20px rgba(79, 70, 229, 0.4);
+        border-color: #4f46e5;
+      }
+
+      .input-pill label {
+        white-space: nowrap;
+        margin-left: 15px;
+        font-weight: bold;
+        color: #444;
+        min-width: 100px;
+      }
+
+      .input-pill input,
+      .input-pill select {
+        width: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+        padding: 10px;
+        font-family: inherit;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      /* === 3. دکمه پایین === */
+      .action-area {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-submit-custom {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 15px 60px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(0, 0, 255, 0.4);
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn-submit-custom:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 25px rgba(0, 0, 255, 0.5);
+      }
+
+      .hidden-input {
+        display: none !important;
+      }
+
+      h1 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        font-weight: 900;
+      }
+
+      @media (max-width: 768px) {
+        .upload-grid {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content" style="width: 900px;">
+      <div>
+        <h1>پنل تحلیل هوشمند</h1>
+
+        <form id="analysisForm">
+          <div class="upload-grid">
+            <div class="upload-card">
+              <label for="lesson_pdf">
+                <i class="fa-solid fa-book-open-reader upload-icon"></i>
+                <span>انتخاب فایل درس (PDF)</span>
+                <span id="lesson-file-name" class="file-name-display"
+                  >فایلی انتخاب نشده</span
+                >
+              </label>
+              <input
+                type="file"
+                id="lesson_pdf"
+                name="lesson_pdf"
+                class="hidden-input"
+                accept=".pdf"
+              />
+            </div>
+
+            <div class="upload-card">
+              <label for="exam_pdf">
+                <i class="fa-solid fa-file-pen upload-icon"></i>
+                <span>انتخاب فایل آزمون (PDF)</span>
+                <span id="exam-file-name" class="file-name-display"
+                  >فایلی انتخاب نشده</span
+                >
+              </label>
+              <input
+                type="file"
+                id="exam_pdf"
+                name="exam_pdf"
+                class="hidden-input"
+                accept=".pdf"
+              />
+            </div>
+          </div>
+
+          <div class="inputs-stack">
+            <div class="input-pill">
+              <label>عنوان تحلیل:</label>
+              <input type="text" placeholder="مثلاً: تحلیل ریاضی دوازدهم" />
+            </div>
+
+            <div class="input-pill">
+              <label>نوع آزمون:</label>
+              <select>
+                <option value="">انتخاب کنید...</option>
+                <option value="1">تستی (چهارگزینه‌ای)</option>
+                <option value="2">تشریحی</option>
+              </select>
+            </div>
+
+            <div class="input-pill">
+              <label>قالب تحلیل:</label>
+              <input type="text" placeholder="پیش‌فرض هوش مصنوعی..." />
+            </div>
+            <div class="input-group" style="background-color: #fff;border-radius: 10px;padding: 5px;">
+                    <label class="input-label" style="text-align: center;width: 100%;">انواع سوالات</label>
+                    <br/>
+
+                    <div class="tags-container" id="questionTypes">
+                        <div class="tag-item" onclick="toggleTag(this)">تستی</div>
+                        <div class="tag-item" onclick="toggleTag(this)">تشریحی</div>
+                        <div class="tag-item" onclick="toggleTag(this)">کوتاه پاسخ</div>
+                        <div class="tag-item" onclick="toggleTag(this)">صحیح/غلط</div>
+                    </div>
+                </div>
+          </div>
+
+          <div class="action-area" style="margin-bottom: 3rem;">
+            <button type="submit" class="btn-submit-custom" id="submitBtn">
+              <span class="btn-text">شروع پردازش</span>
+              <span id="loader" style="display: none">⏳ در حال تحلیل...</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+        function toggleTag(element) {
+    element.classList.toggle('selected');
+}
+      // مدیریت نمایش نام فایل‌ها
+      document
+        .getElementById("lesson_pdf")
+        .addEventListener("change", function (e) {
+          if (this.files.length > 0) {
+            document.getElementById("lesson-file-name").innerText =
+              this.files[0].name;
+            this.closest(".upload-card").style.borderColor = "#4f46e5";
+          }
+        });
+
+      document
+        .getElementById("exam_pdf")
+        .addEventListener("change", function (e) {
+          if (this.files.length > 0) {
+            document.getElementById("exam-file-name").innerText =
+              this.files[0].name;
+            this.closest(".upload-card").style.borderColor = "#4f46e5";
+          }
+        });
+
+      // شبیه‌سازی لودینگ هنگام ثبت فرم
+      document
+        .getElementById("analysisForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // جلوگیری از رفرش صفحه در حالت تست
+
+          const btn = document.getElementById("submitBtn");
+          const loader = document.getElementById("loader");
+          const btnText = btn.querySelector(".btn-text");
+
+          btn.disabled = true;
+          btnText.style.display = "none";
+          loader.style.display = "inline";
+          btn.style.opacity = "0.7";
+          btn.style.cursor = "wait";
+        });
+    </script>
+    <script src="js/layout.js"></script>
+  </body>
+</html>

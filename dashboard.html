@@ -10,38 +10,55 @@
 </head>
 <body>
 
-    <div class="main-content">
+    <div class="main-content" >
         <header class="top-header">
             <div>
-                <h1>پنل شخصی</h1>
-                <p class="date-display">امروز: یکشنبه، ۳۰ آذر ۱۴۰۴</p>
+                <h1 class="main-title">پنل شخصی</h1>
+                <p class="date-display caption-text">امروز: یکشنبه، ۳۰ آذر ۱۴۰۴</p>
             </div>
             <div class="header-actions">
-                <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge-dot"></span></button>
-                <a href="settings.html" class="icon-btn"><i class="fa-solid fa-gear"></i></a>
+                <button class="icon-btn">
+                    <img class="icon-template" src="icon/اعلان.svg" />
+                    </button>
+                <a href="settings.html" class="icon-btn"><img class="icon-template" src="icon/تنظیمات.svg" />
+</a>
             </div>
         </header>
 
         <div class="dashboard-layout">
             
-            <main class="dashboard-main">
+            <main class="dashboard-main" >
                 <div class="kpi-grid">
                     <div class="kpi-card purple">
-                        <div class="kpi-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="kpi-icon"><img class="icon-template" src="icon/کلاس های فعال.svg" /></div>
                         <div class="kpi-info">
                             <h3>کلاس‌های فعال</h3>
                             <span>۲ کلاس</span>
                         </div>
                     </div>
                     <div class="kpi-card blue">
-                        <div class="kpi-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="kpi-icon"><img class="icon-template" src="icon/دانش آموز.svg" /></div>
                         <div class="kpi-info">
                             <h3>کل دانش‌آموزان</h3>
                             <span>۵۱ نفر</span>
                         </div>
                     </div>
                     <div class="kpi-card green">
-                        <div class="kpi-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="kpi-icon"><img class="icon-template" src="icon/آزمون برگذار شده.svg" /></div>
+                        <div class="kpi-info">
+                            <h3>آزمون‌های تعریف شده</h3>
+                            <span>۶ آزمون</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card green">
+                        <div class="kpi-icon"><img class="icon-template" src="icon/آزمون برگذار شده.svg" /></div>
+                        <div class="kpi-info">
+                            <h3>آزمون‌های تعریف شده</h3>
+                            <span>۶ آزمون</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card green">
+                        <div class="kpi-icon"><img class="icon-template" src="icon/آزمون برگذار شده.svg" /></div>
                         <div class="kpi-info">
                             <h3>آزمون‌های تعریف شده</h3>
                             <span>۶ آزمون</span>
@@ -55,16 +72,16 @@
                     </div>
                     <div class="shortcuts-grid">
                         <a href="classes.html" class="shortcut-card">
-                            <i class="fa-solid fa-chalkboard-user"></i>
-                            <span>تحلیل هوشمند</span>
+                            <img class="icon-template" src="icon/تحلیل ها.svg" />
+                            <span>تحلیل هوشمند آزمون مبتنی بر منبع درسی توسط هوش مصنوعی</span>
                         </a>
                         <a href="#" class="shortcut-card">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <span>طراحی آزمون شخصی سازی شده (AI)</span>
+                            <img class="icon-template" src="icon/آزمون های تعریف شده.svg" />
+                            <span>تعریف آزمون های کلاسی </span>
                         </a>
                         <a href="#" class="shortcut-card">
-                            <i class="fa-solid fa-chart-pie"></i>
-                            <span>مدیریت هوشمند کلاسی</span>
+                            <img class="icon-template" src="icon/طراحی تمرین با AI.svg" />
+                            <span>ساخت تمرین شخصی سازی شده هوشمند برای دانش آموزان</span>
                         </a>
                     </div>
                 </div>
@@ -72,7 +89,7 @@
 
             <aside class="dashboard-side">
     
-                <div class="profile-widget">
+                <div class="profile-widget" >
                     
                     <div class="pw-header">
                         <div class="avatar-container">
@@ -93,7 +110,7 @@
                     </div>
                     <div class="digital-id-card">
                         <div class="id-row">
-                            <div class="id-icon bg-indigo"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="id-icon bg-indigo"><img class="icon-template" src="icon/تحصیلات.svg" /></div>
                             <div class="id-content">
                                 <span class="id-label">تحصیلات</span>
                                 <span class="id-value">کارشناس زبان انگلیسی</span>
@@ -103,7 +120,7 @@
                         <div class="dashed-line"></div>
                     
                         <div class="id-row copy-row">
-                            <div class="id-icon bg-blue"><i class="fa-solid fa-id-badge"></i></div>
+                            <div class="id-icon bg-blue"><img class="icon-template" src="icon/کد پرسنلی.svg" /></div>
                             <div class="id-content">
                                 <span class="id-label">کد پرسنلی</span>
                                 <span class="id-value font-num">36021649</span>
@@ -112,7 +129,7 @@
                         </div>
                     
                         <div class="id-row copy-row" >
-                            <div class="id-icon bg-emerald"><i class="fa-solid fa-fingerprint"></i></div>
+                            <div class="id-icon bg-emerald"><img class="icon-template" src="icon/کدملی.svg" /></div>
                             <div class="id-content">
                                 <span class="id-label">کد ملی</span>
                                 <span class="id-value font-num">1810728819</span>
@@ -139,16 +156,16 @@
             
                     <div class="pw-actions">
                         <a href="schedule.html" class="pw-btn">
-                            <div class="btn-icon"><i class="fa-regular fa-calendar"></i></div>
+                            <div class="btn-icon"><img class="icon-template" src="icon/تقویم.svg" /></div>
                             <div class="btn-text">
                                 <span>برنامه هفتگی</span>
                             </div>
                             <i class="fa-solid fa-chevron-left arrow"></i>
                         </a>
-            
+      
                         <a href="all-students.html" class="pw-btn">
-                            <div class="btn-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
-                            <div class="btn-text">
+                            <div class="btn-icon"><img class="icon-template" src="icon/دانش آموزان.svg" /></div>
+                            <div class="btn-text" >
                                 <span>لیست کلی دانش آموزان</span>
                             </div>
                             <i class="fa-solid fa-chevron-left arrow"></i>

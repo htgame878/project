@@ -14,38 +14,41 @@ function createSidebar() {
         </div>
         </a>
         <nav>
-            <a href="dashboard.html" class="nav-item ${
-              path.includes("dashboard.html") ? "active" : ""
-            }">
-                <span>🏠</span> پروفایل شخصی
+            <a href="dashboard.html" class="nav-item ">
+                
+            <img class="icon-template" src="icon/بازگشت به خانه.svg" />
+                             پروفایل شخصی
             </a>
-            <a href="classes.html" class="nav-item ${
-              path.includes("classes.html") ? "active" : ""
-            }">
-                <span>👨‍🏫</span> مدیریت کلاس‌ ها
-            </a>
+            <a href="classes.html" class="nav-item "> 
+<img class="icon-template" src="icon/مدیریت کلاس.svg" />
+                   مدیریت کلاس‌ ها
+            </a>  
               <a href="exams-step1.html" class="nav-item ">
-                <span>👨‍🎓</span> مدیریت آزمون ها
+                <img class="icon-template" src="icon/آزمون ها.svg" /> مدیریت آزمون ها
+            </a>  
+            <a hre  f="#" class="nav-item">
+                <img class="icon-template" src="icon/تحلیل ها.svg" />
+ تحلیل‌ ها
             </a>
-            <a href="#" class="nav-item">
-                <span>📊</span> تحلیل‌ ها
+            <a href="exercises-landing.html" class="nav-item ">
+                <img class="icon-template" src="icon/تمرین ها.svg" />
+ تمرین ها
             </a>
-            <a href="exercises-landing.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>📝</span> تمرین ها
-            </a>
-             <a href="teacher-notes.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>🖇️</span> یادداشت ها
+             <a href="teacher-notes.html" class="nav-item ">
+                <img class="icon-template" src="icon/یادداشت ها.svg" />
+ یادداشت ها
               </a>
-            <a href="settings.html" class="nav-item ${path.includes("settings.html") ? "active" : "" }">
-                <span>⚙️</span> تنظیمات
+            <a href="settings.html" class="nav-item ">
+                <img class="icon-template" src="icon/تنظیمات.svg" />
+ تنظیمات
             </a>
             <a href="index.html" class="nav-item" style="justify-content: center;">
                  بازگشت به خانه
             </a>
  
         </nav>
-    `;  
-           
+    `;
+
   // اضافه کردن به اول بادی
   document.body.prepend(sidebar);
 }

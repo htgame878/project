@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه دکمه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6; /* رنگ پس‌زمینه ملایم */
+            font-family: 'Tahoma', sans-serif;
+            height: 100vh; /* تمام ارتفاع صفحه */
+            display: flex;
+            justify-content: center; /* وسط‌چین افقی */
+            align-items: center; /* وسط‌چین عمودی */
+        }
+
+        /* --- استایل دکمه --- */
+        .primary-btn {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); /* گرادینت بنفش */
+            color: white;
+            border: none;
+            padding: 15px 40px; /* فضای داخلی دکمه */
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 12px; /* گردی گوشه‌ها */
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4); /* سایه نرم */
+            transition: all 0.3s ease; /* انیمیشن نرم */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* فاصله متن تا آیکون */
+            text-decoration: none;
+        }
+
+        /* حالت هاور (وقتی موس روی دکمه است) */
+        .primary-btn:hover {
+            transform: translateY(-3px); /* کمی بالا بیاید */
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.6); /* سایه بیشتر شود */
+        }
+
+        /* حالت کلیک (وقتی دکمه فشرده می‌شود) */
+        .primary-btn:active {
+            transform: translateY(1px); /* کمی پایین برود */
+            box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="primary-btn">
+        <i class="fa-solid fa-rocket"></i> شروع عملیات
+    </button>
+    
+</body>
+</html>

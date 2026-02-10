@@ -79,7 +79,7 @@ class ScheduleManager {
 
             daySection.innerHTML = `
                 <div class="day-header">${day.label}</div>
-                <div style="display:flex; flex-direction:column; gap:15px;">
+                <div style="display:grid;grid-template-columns:repeat(3,1fr); flex-direction:row; gap:10px;">
                     ${slotsHtml}
                 </div>
             `;

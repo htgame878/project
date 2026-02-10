@@ -6,15 +6,19 @@
 
 /* --- Landing Page Cards --- */
 .hero-cards-container {
-    display: flex; flex-direction: column; gap: 20px; margin-top: 30px;
+    display: flex; flex-direction: row; gap: 20px; margin-top: 30px;
 }
 
 .hero-card {
-    background: white; padding: 25px; border-radius: 20px;
+    background: white; padding: 35px; border-radius: 20px;
     display: flex; align-items: center; gap: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid transparent;
     cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative; overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex:1;
 }
 
 .hero-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
@@ -24,8 +28,8 @@
     display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0;
 }
 
-.theme-blue-gradient { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color: #2563eb; border-left: 5px solid #2563eb; }
-.theme-purple-gradient { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); color: #9333ea; border-left: 5px solid #9333ea; }
+.theme-blue-gradient { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color: #2563eb; }
+.theme-purple-gradient { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); color: #9333ea; }
 
 .hero-text h3 { margin: 0 0 5px 0; font-size: 1.2rem; color: #1e293b; }
 .hero-text p { margin: 0; font-size: 0.9rem; color: #64748b; }
@@ -294,3 +298,10 @@
         .s-line { height: 12px; width: 100%; margin-bottom: 10px; }
         .s-line-short { height: 12px; width: 70%; }
         .s-footer { height: 30px; width: 100%; margin-top: 20px; }
+
+        .page-header-simple{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            margin-top: 1rem;
+        }

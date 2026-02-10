@@ -25,7 +25,8 @@ export class ExamMatrixManager {
             // اضافه کردن Max Score به هدر برای اطلاع معلم
             let subText = col.meta ? `<div style="font-size:0.7rem; color:#888; font-weight:normal">(max: ${col.meta.max_score})</div>` : '';
             
-            headersHtml += `<th class="${className}" data-col-id="${col.id}">${col.label} ${subText}</th>`;
+            // اضافه کردن Max Score به هدر برای اطلاع معلم
+            headersHtml += ``;
         });
 
         // ساخت ردیف‌ها

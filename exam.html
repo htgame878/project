@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ایجاد آزمون و تصحیح</title>
-    <link rel="stylesheet" href="css/exam.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/exam.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -55,50 +55,38 @@
           </button>
         </div>
       </div>
-
+      //لیست دانش اموزان
       <div class="grading-section hidden" id="gradingSection">
         <h3 class="section-title">لیست دانش‌آموزان</h3>
-        <div class="student-list" id="studentListContainer"></div>
-      </div>
-    </div>
-    <div id="gradingModalOverlay" class="grading-modal-overlay">
-      <div class="grading-modal-content">
-        <div class="grading-modal-header">
-          <div class="header-left">
-            <button class="close-modal-btn" onclick="closeGradingModal()">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="student-mini-profile">
-              <img src="" id="modalAvatar" class="mini-avatar" alt="Student" />
-              <div>
-                <h3 id="modalStName" class="mini-name">---</h3>
-                <span class="mini-status">در حال تصحیح...</span>
+        <div class="student-list" id="studentListContainer">
+          <div class="student-row">
+            <div>
+              <div class="student-info">
+                <img src="${st.avatar}" class="avatar" alt="Avatar" />
+                <div>
+                  <span class="st-name">${st.name}</span>
+                  <span class="st-father">نام پدر: ${st.father}</span>
+                </div>
+                <div class="grading-status">
+                  <button
+                    class="btn-grading"
+                    onclick="
+                      openGradingModal('${st.id}', '${st.name}', '${st.avatar}')
+                    "
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i> شروع تصحیح
+                  </button>
+                </div>
               </div>
+              <input type="checkbox" value="false"  />
             </div>
           </div>
-
-          <div class="header-right">
-            <span class="score-label">نمره فعلی:</span>
-            <div class="live-score-box">
-              <span id="modalLiveScore">0</span>
-              <span class="score-divider">/</span>
-              <span id="modalMaxScore">20</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="grading-modal-body" id="gradingQuestionsList"></div>
-
-        <div class="grading-modal-footer">
-          <button class="g-btn g-btn-outline" onclick="closeGradingModal()">
-            لغو
-          </button>
-          <button class="g-btn g-btn-primary" onclick="submitGrade()">
-            ثبت نمره و نفر بعدی <i class="fa-solid fa-chevron-left"></i>
-          </button>
+          
         </div>
       </div>
     </div>
-    <script src="js/exam.js"></script>
+    //modal
+    
+    <script src="/exam.js"></script>
   </body>
 </html>

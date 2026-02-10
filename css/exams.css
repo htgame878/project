@@ -459,6 +459,12 @@ body {
     gap: 5rem;
     padding: 2rem 0;
 }
+.input-label{
+    
+}
+.input-group{
+    margin-bottom: 1rem;
+}
 .tag-item{
  width: 130px !important;
  text-align: center;
