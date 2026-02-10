@@ -18,7 +18,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; font-family:  'Inter','Estedad'; text-decoration: none; }
 
-body {  background: var(--bg-body);background-image: url("/images/8.svg") ;background-repeat: no-repeat; background-size: cover; direction: rtl; }
+body {  background: var(--bg-body);background-image: url("../images/8.svg") ;background-repeat: no-repeat; background-size: cover; direction: rtl; }
 
 /* تیتر اصلی */
 .main-title {
