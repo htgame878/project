@@ -1,6 +1,6 @@
 /* css/login.css */
 body{
-    background-image: url("/images/11.svg") ;background-repeat: no-repeat; background-size: cover
+    background-image: url("../images/11.svg") ;background-repeat: no-repeat; background-size: cover
 }
 /* Background Style: Blur Gradient */
 .login-wrapper {
