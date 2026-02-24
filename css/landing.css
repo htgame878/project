@@ -224,8 +224,8 @@ body{
 
 /* Hero Section */
 .hero {
-    padding: 80px 0;
-    
+    padding-bottom: 80px;
+    padding-top: 140px ;
     overflow: hidden;
 }
 
@@ -405,3 +405,193 @@ body{
     }
 }
 
+/* Stats Section */
+.section-stats {
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    margin: 40px 0;
+}
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.stat-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
+
+/* Steps Section */
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1-fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.step {
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 15px;
+    position: relative;
+}
+.step-icon {
+    width: 50px; height: 50px;
+    background: #4f46e5; color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.5rem; font-weight: bold;
+}
+/* تنظیمات کلی کانتینر */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 60px;
+    position: relative;
+}
+
+/* استایل هر مرحله */
+.step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* آیکون دایره‌ای اعداد */
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: #4f46e5; /* رنگ اصلی برهان */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px #4f46e5; /* ایجاد افکت حلقه دور دایره */
+}
+
+/* ایجاد خط اتصال (فقط برای دسکتاپ) */
+@media (min-width: 768px) {
+    .step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 30px; /* وسط دایره */
+        right: 60%; /* شروع از لبه دایره */
+        width: 80%; /* طول خط */
+        height: 2px;
+        border-top: 2px dashed #4f46e5; /* خط چین برای حس نقشه */
+        z-index: -1;
+    }
+}
+
+/* استایل موبایل: خطوط عمودی میشن */
+@media (max-width: 767px) {
+    .steps-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        width: 2px;
+        height: 50px;
+        border-left: 2px dashed #4f46e5;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+}
+.section-roadmap {
+    padding: 100px 0;
+    overflow: hidden; /* برای جلوگیری از اسکرول افقی احتمالی خطوط */
+}
+
+.roadmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px; /* فاصله زیاد برای نمایش بهتر خطوط */
+    position: relative;
+}
+
+.roadmap-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+/* جابه‌جا کردن یکی در میان کارت‌ها برای جذابیت بصری */
+.roadmap-item:nth-child(even) {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
+.roadmap-item:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.roadmap-icon {
+    width: 50px;
+    height: 50px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    margin: 0 15px;
+    flex-shrink: 0;
+}
+
+.roadmap-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #1e293b;
+}
+
+.roadmap-content p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+/* استایل پایه کارت برای آماده‌سازی انیمیشن */
+.roadmap-item {
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    -webkit-transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    -moz-transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    -ms-transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    -o-transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+
+/* افکت هاور روی کل کارت */
+.roadmap-item:hover {
+    transform: scale(1.05); /* کمی بزرگ شدن */
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15); /* سایه عمیق‌تر */
+    border-color: #4f46e5;
+}
+
+
+
+
+/* تغییر رنگ تیتر هنگام هاور */
+.roadmap-item:hover .roadmap-content h3 {
+    color: #4f46e5;
+    transition: color 0.3s ease;
+}

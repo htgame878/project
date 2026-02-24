@@ -1,122 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>برهان - سیستم هوشمند مدارس</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.3/leader-line.min.js"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      async
+    ></script>
+  </head>
+  <body>
     <nav class="landing-navbar">
-        <div class="container nav-container">
-            <a href="#" class="nav-logo">
-                <img class="logo-home" src="images/logo-black.svg" />
-                <span class="logo-title">برنامه راهنمای هوشمند آموزش نوین</span>
-            </a>
-    
-            <div class="menu-toggle" id="mobile-menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-    
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="#features" class="nav-link">ویژگی‌ها</a></li>
-                
-                </ul>
-                <a href="login.html" class="btn btn-primary nav-btn"><img class="icon-login" src="./icon/ورود به حساب کاربری.svg">ورود به پنل کاربری</a>
-            </div>
-            
-            <div class="nav-overlay" id="nav-overlay"></div>
+      <div class="container nav-container">
+        <a href="#" class="nav-logo">
+          <img class="logo-home" src="images/logo-black.svg" />
+          <span class="logo-title">برنامه راهنمای هوشمند آموزش نوین</span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
         </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#features" class="nav-link">ویژگی‌ها</a></li>
+          </ul>
+          <a href="login.html" class="btn btn-primary nav-btn"
+            ><img class="icon-login" src="./icon/ورود به حساب کاربری.svg" />ورود
+            به پنل کاربری</a
+          >
+        </div>
+
+        <div class="nav-overlay" id="nav-overlay"></div>
+      </div>
     </nav>
 
     <header class="hero">
-        <div>
+      <div>
         <div class="container hero-container">
-            <div class="hero-content">
-                
-                <h1 style="font-size: 35px;">
-                    <span class="text-primary">برهان</span>
-                    <br/>
-                    <span style="font-size: 38px;">
-
-                        دلیلی برای تحول 
-                        در آموزش و پرورش   
-                    </span>
-                    <br/>
-                    <span class="text-primary">با هوش مصنوعی</span>
-
-                </h1>
-                <p>
-                    برنامه جامع مدیریت کلاسی هوشمند، طراحی آزمون و تمرین شخصی سازی شده، تحلیل پیشرفت تحصیلی، نگارش طرح درس اختصاصی همه با قدرت هوش مصنوعی در دستان شماست. 
-                </p>
-                <div class="hero-actions">
-                    <a href="login.html" class="btn btn-primary btn-lg">
-                        شروع کنید 
-                    </a>
-                    <a href="#features" style="color: #fff;" class="btn btn-outline btn-lg ">بیشتر بدانید</a>
-                </div>
+          <div data-aos="fade-left" class="hero-content">
+            <h1 style="font-size: 35px">
+              <span class="text-primary">برهان</span>
+              <br />
+              <span style="font-size: 38px">
+                دلیلی برای تحول در آموزش و پرورش
+              </span>
+              <br />
+              <span class="text-primary">با هوش مصنوعی</span>
+            </h1>
+            <p>
+              برنامه جامع مدیریت کلاسی هوشمند، طراحی آزمون و تمرین شخصی سازی
+              شده، تحلیل پیشرفت تحصیلی، نگارش طرح درس اختصاصی همه با قدرت هوش
+              مصنوعی در دستان شماست.
+            </p>
+            <div class="hero-actions">
+              <a href="login.html" class="btn btn-primary btn-lg">
+                شروع کنید
+              </a>
+              <a
+                href="#features"
+                style="color: #fff"
+                class="btn btn-outline btn-lg"
+                >بیشتر بدانید</a
+              >
             </div>
-            <div class="hero-image">
-                <div class="abstract-shape">
-                    <img src="background_removed_image.png" style="width: 300px;transform: translate(0,-1.5rem);"/>
-                    <div class="floating-card card-1">
-                        <i class="fa-solid fa-check-circle text-success"></i> آزمون ساخته شد
-                    </div>
-                    <div class="floating-card card-2">
-                        <i class="fa-solid fa-chart-line text-primary"></i> رشد ۳۰٪ نمرات
-                    </div>
-                </div>
+          </div>
+          <div class="hero-image" data-aos="fade-right">
+            <div class="abstract-shape">
+              <img
+                src="background_removed_image.png"
+                style="width: 300px; transform: translate(0, -1.5rem)"
+              />
+              <div class="floating-card card-1">
+                <img class="icon-template" src="icon/تایید.svg" /> آزمون ساخته
+                شد
+              </div>
+              <div class="floating-card card-2">
+                <img class="icon-template" src="icon/رشد نمرات.svg" /> رشد ۳۰٪
+                نمرات
+              </div>
             </div>
+          </div>
         </div>
-        </div>
+      </div>
     </header>
 
-    <section id="features" class="section-features">
-        <div class="container">
-            <div class="section-title body-text">
-                <h2>چرا برهان ؟</h2>
-                <p>برنامه راهنمای هوشمند آموزش نوین ابزارهایی در اخیار شما قرار میدهد که هر معلم / دانش‌آموز / والدینی به آن نیاز دارد</p>
-            
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon-box bg-blue">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    </div>
-                    <h3>طراحی آزمون های شخصی سازی شده با AI</h3>
-                    <p style="text-align: justify;">فقط دانش آموز را انتخاب کنید، هوش مصنوعی در چند ثانیه آزمون استاندارد مناسب با سطح هر دانش آموز طرح می‌کند.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon-box bg-purple">
-                        <i class="fa-solid fa-chart-pie"></i>
-                    </div>
-                    <h3>مدیریت هوشمند کلاسی</h3>
-                    <p style="text-align: justify;">شناسایی هوشمند نقاط ضعف و قوت هر دانش‌آموز به همراه گروه بندی هوشمند دانش آموزان برای تضمین ارتقای یادگیری دانش آموزان در کلاس.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-box bg-green">
-                        <i class="fa-solid fa-file-excel"></i>
-                    </div>
-                    <h3>طراحی تمرین های شخصی سازی شده با AI</h3>
-                    <p style="text-align: justify;">به هر دانش آموز متناسب با سطح او تمرین های منحصر به فرد داده میشود تا فرایند یادگیری در هر دانش آموز متناسب با شرایط ویژه اش کامل شود.</p>
-                </div>
-                
-            </div>
+    <section class="section-roadmap">
+      <div class="container">
+        <div class="section-title" data-aos="fade-down">
+          <h2 class="part-title">مسیر هوشمند برهان</h2>
         </div>
+
+        <div class="roadmap-container">
+          <div class="roadmap-item" id="step1" data-aos="fade-left">
+            <div class="roadmap-icon">۱</div>
+            <div class="roadmap-content">
+              <h3>ثبت‌نام و ورود</h3>
+              <p>به دنیای هوش مصنوعی آموزشی خوش آمدید.</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item" id="step2" data-aos="fade-right">
+            <div class="roadmap-icon">۲</div>
+            <div class="roadmap-content">
+              <h3>تحلیل کلاس</h3>
+              <p>هوش مصنوعی نقاط ضعف و قدرت دانش‌آموزان را شناسایی می‌کند.</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item" id="step3" data-aos="fade-left">
+            <div class="roadmap-icon">۳</div>
+            <div class="roadmap-content">
+              <h3>خروجی نهایی</h3>
+              <p>آزمون و طرح درس شخصی‌سازی شده آماده است!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/leader-line-new/leader-line.min.js"></script>
+
+    <section id="features" class="section-features">
+      <div class="container">
+        <div class="section-title body-text">
+          <h2>چرا برهان ؟</h2>
+          <p>
+            برنامه راهنمای هوشمند آموزش نوین ابزارهایی در اخیار شما قرار میدهد
+            که هر معلم / دانش‌آموز / والدینی به آن نیاز دارد
+          </p>
+        </div>
+
+        <div data-aos="fade-up" class="features-grid">
+          <div class="feature-card">
+            <div class="icon-box bg-blue">
+              <img class="icon-template" src="icon/ظراحی آزمون با AI.svg" />
+            </div>
+            <h3>طراحی آزمون های شخصی سازی شده با AI</h3>
+            <p style="text-align: justify">
+              فقط دانش آموز را انتخاب کنید، هوش مصنوعی در چند ثانیه آزمون
+              استاندارد مناسب با سطح هر دانش آموز طرح می‌کند.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-box bg-purple">
+              <img class="icon-template" src="icon/مدیریت کلاس.svg" />
+            </div>
+            <h3>مدیریت هوشمند کلاسی</h3>
+            <p style="text-align: justify">
+              شناسایی هوشمند نقاط ضعف و قوت هر دانش‌آموز به همراه گروه بندی
+              هوشمند دانش آموزان برای تضمین ارتقای یادگیری دانش آموزان در کلاس.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-box bg-green">
+              <img class="icon-template" src="icon/طراحی تمرین با AI.svg" />
+            </div>
+            <h3>طراحی تمرین های شخصی سازی شده با AI</h3>
+            <p style="text-align: justify">
+              به هر دانش آموز متناسب با سطح او تمرین های منحصر به فرد داده میشود
+              تا فرایند یادگیری در هر دانش آموز متناسب با شرایط ویژه اش کامل
+              شود.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; ۲۰۲۵ برهان. تمامی حقوق محفوظ است.</p>
-        </div>
+      <div class="container">
+        <p>&copy; ۲۰۲۵ برهان. تمامی حقوق محفوظ است.</p>
+      </div>
     </footer>
-    <script src="./js/index.js" ></script>
-</body>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./js/index.js"></script>
+    <script src="js/robat.js"></script>
+  </body>
 </html>
