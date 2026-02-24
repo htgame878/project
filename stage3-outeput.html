@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامه تمرینی هوشمند - Stage 03</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f3f4f6;
+            --surface-color: #ffffff;
+            --text-main: #1f2937;
+            --text-secondary: #6b7280;
+            --border-radius: 16px; /* Pill/Rounded style */
+            --accent-learning: #dbeafe; /* آبی کمرنگ */
+            --text-learning: #1e40af;
+            --accent-consolidation: #d1fae5; /* سبز کمرنگ */
+            --text-consolidation: #065f46;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+       
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Reports Section --- */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .report-text {
+            font-size: 0.95rem;
+            white-space: pre-line; /* برای حفظ پاراگراف‌ها */
+            color: #374151;
+        }
+
+        /* --- Day Section --- */
+        .day-container {
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px; /* در RTL سمت راست می‌افتد */
+        }
+
+        .day-header {
+            background: var(--surface-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .day-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .student-guide {
+            margin-top: 10px;
+            background: #eff6ff;
+            padding: 10px 15px;
+            border-radius: 12px;
+            color: #1e3a8a;
+            font-size: 0.9rem;
+            border: 1px dashed #bfdbfe;
+        }
+
+        /* --- Block Section --- */
+        .block-section {
+            margin-top: 25px;
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 50px; /* Pill shape */
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .badge-learning { background: var(--accent-learning); color: var(--text-learning); }
+        .badge-consolidation { background: var(--accent-consolidation); color: var(--text-consolidation); }
+
+        /* --- Exercise Card --- */
+        .exercise-card {
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .exercise-tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .meta-tag {
+            background: #f3f4f6;
+            padding: 2px 10px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* --- Exercise Lines (Critical Rule #9) --- */
+        .line {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .line.fa {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .line.en {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9fafb;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block; /* برای اینکه کل خط را نگیرد مگر لازم باشد */
+            max-width: 100%;
+        }
+
+        /* --- Sub Tasks --- */
+        .sub-tasks {
+            margin-top: 15px;
+            padding-right: 20px; /* Indent in RTL */
+            border-right: 2px solid #e5e7eb;
+        }
+
+        .sub-task-item {
+            margin-bottom: 10px;
+        }
+        
+        .sub-id {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-left: 5px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content" >
+
+    <div class="container" id="app">
+        <header>
+            <h1 class="main-title">برنامه تمرینی شخصی‌سازی شده</h1>
+           
+            
+        </header>
+
+        <div id="content-area"></div>
+    </div>
+        
+    </div>
+    <script>
+        // --- نمونه داده JSON که از Stage 3 خارج می‌شود ---
+        // این دقیقاً ساختاری است که در پرامپت خواسته بودید
+        const stage3Data = {
+            "student_id": "ST-90210",
+            "teacher_report_fa": "دانش‌آموز در مفاهیم پایه ریاضی پیشرفت خوبی داشته است. تمرین‌های روز اول بر روی تثبیت ضرب متمرکز هستند. لطفاً روی زمان‌بندی حل سوالات نظارت کنید.",
+            "parent_report_fa": "فرزند شما نیاز به مرور بیشتر در بخش درک مطلب انگلیسی دارد. برنامه سه روز آینده طوری طراحی شده که فشار زیادی وارد نشود اما نقاط ضعف پوشش داده شوند.",
+            "plan_days": [
+                {
+                    "day_number": 1,
+                    "student_guide_fa": "سلام قهرمان! امروز قراره با چندتا مسئله ریاضی گرم کنیم و بعد یه متن کوتاه انگلیسی بخونیم. نگران نباش، آسونه!",
+                    "blocks": [
+                        {
+                            "block_id": "morning_math",
+                            "focus": "Learning",
+                            "exercises": [
+                                {
+                                    "item_key": "math_mult_01",
+                                    "type": "Multiple Choice",
+                                    "difficulty": "Medium",
+                                    "lines": [
+                                        { "lang": "fa", "text": "حاصل عبارت زیر کدام است؟" },
+                                        { "lang": "en", "text": "12 × 4 = ?" }
+                                    ],
+                                    "sub_tasks": []
+                                },
+                                {
+                                    "item_key": "math_prob_02",
+                                    "type": "Word Problem",
+                                    "difficulty": "Hard",
+                                    "lines": [
+                                        { "lang": "fa", "text": "علی ۳ جعبه مداد دارد. در هر جعبه ۶ مداد وجود دارد." },
+                                        { "lang": "fa", "text": "اگر او ۲ مداد به دوستش بدهد، چند مداد برایش باقی می‌ماند؟" }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block_id": "evening_lang",
+                            "focus": "Consolidation",
+                            "exercises": [
+                                {
+                                    "item_key": "eng_reading_01",
+                                    "type": "Reading Comp",
+                                    "difficulty": "Easy",
+                                    "lines": [
+                                        { "lang": "fa", "text": "متن زیر را بخوانید و به سوالات پاسخ دهید:" },
+                                        { "lang": "en", "text": "Sara likes apples. She has two red apples in her bag." }
+                                    ],
+                                    "sub_tasks": [
+                                        {
+                                            "sub_id": "a",
+                                            "lines": [
+                                                { "lang": "fa", "text": "سارا چه میوه‌ای دوست دارد؟" },
+                                                { "lang": "en", "text": "What fruit does Sara like?" }
+                                            ]
+                                        },
+                                        {
+                                            "sub_id": "b",
+                                            "lines": [
+                                                { "lang": "fa", "text": "رنگ سیب‌ها چیست؟" }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "student_guide_fa": "امروز روز سرعته! تمرین‌های کوتاه داریم تا ذهنت رو آماده نگه داریم.",
+                    "blocks": [
+                         {
+                            "block_id": "afternoon_mix",
+                            "focus": "Consolidation",
+                            "exercises": [
+                                {
+                                    "item_key": "sci_space_01",
+                                    "type": "Fill in the blank",
+                                    "difficulty": "Medium",
+                                    "lines": [
+                                        { "lang": "fa", "text": "سیاره‌ای که ما در آن زندگی می‌کنیم ....... نام دارد." }
+                                    ]
+                                }
+                            ]
+                         }
+                    ]
+                }
+            ]
+        };
+
+        // --- توابع رندرینگ ---
+
+        function renderLines(lines) {
+            return lines.map(line => 
+                `<div class="line ${line.lang}">${line.text}</div>`
+            ).join('');
+        }
+
+        function renderSubTasks(subTasks) {
+            if (!subTasks || subTasks.length === 0) return '';
+            return `
+                <div class="sub-tasks">
+                    ${subTasks.map(task => `
+                        <div class="sub-task-item">
+                            <span class="sub-id">(${task.sub_id})</span>
+                            ${renderLines(task.lines)}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderApp() {
+            const container = document.getElementById('content-area');
+            let html = '';
+
+            // 1. بخش گزارش‌ها
+            html += `
+                <section class="reports-grid">
+                    <div class="card">
+                        <h3>📋 گزارش معلم</h3>
+                        <p class="report-text">${stage3Data.teacher_report_fa}</p>
+                    </div>
+                    <div class="card">
+                        <h3>👨‍👩‍👧‍👦 گزارش والدین</h3>
+                        <p class="report-text">${stage3Data.parent_report_fa}</p>
+                    </div>
+                </section>
+            `;
+
+            // 2. حلقه روی روزها
+            stage3Data.plan_days.forEach(day => {
+                html += `
+                    <div class="day-container">
+                        <div class="day-header">
+                            <div class="day-title">روز ${day.day_number}</div>
+                            <div class="student-guide">💡 ${day.student_guide_fa}</div>
+                        </div>
+                `;
+
+                // 3. حلقه روی بلاک‌ها
+                day.blocks.forEach(block => {
+                    const badgeClass = block.focus === 'Learning' ? 'badge-learning' : 'badge-consolidation';
+                    
+                    html += `
+                        <div class="block-section">
+                            <div class="block-header">
+                                <h3>${block.block_id}</h3>
+                                <span class="badge ${badgeClass}">${block.focus}</span>
+                            </div>
+                    `;
+
+                    // 4. حلقه روی تمرین‌ها
+                    block.exercises.forEach(ex => {
+                        html += `
+                            <div class="exercise-card">
+                                <div class="exercise-meta">
+                                    <div class="exercise-tags">
+                                        <span class="meta-tag">${ex.type}</span>
+                                        <span class="meta-tag">${ex.difficulty}</span>
+                                    </div>
+                                    <span style="font-family:monospace; opacity:0.5;">#${ex.item_key}</span>
+                                </div>
+                                <div class="exercise-content">
+                                    ${renderLines(ex.lines)}
+                                    ${renderSubTasks(ex.sub_tasks)}
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += `</div>`; // بستن Block
+                });
+
+                html += `</div>`; // بستن Day
+            });
+
+            container.innerHTML = html;
+        }
+
+        // اجرا
+        renderApp();
+
+    </script>
+    <script src="js/layout.js"></script>
+</body>
+</html>

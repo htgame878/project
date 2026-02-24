@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}پنل تصحیح آزمون{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/studentcheck.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .main-content { margin: 0 auto; padding: 40px 20px; }
+        /* استایل برای چک‌باکس‌های مخفی که توسط دکمه‌ها کنترل می‌شوند */
+        .hidden-check { display: none !important; }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="main-content" style="width: 900px">
+    <header class="header-container">
+        <a href="{{ request.META.HTTP_REFERER }}" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <div class="page-titles">
+            <h1>تصحیح آزمون: {{ exam.name }}</h1>
+            <p>لطفاً نمرات را با دقت وارد نمایید</p>
+        </div>
+    </header>
+
+    <form method="post" id="gradingForm">
+        {% csrf_token %}
+        
+        <div class="student-card">
+            <div class="student-name-section">
+                <h2 class="q-number-pill" style="width: 400px">{{ student.full_name }}</h2>
+            </div>
+
+            <div class="questions-wrapper">
+                {% for r in results %}
+                <div class="question-row-container">
+                    <div class="question-box">
+                        <div class="q-number-pill">
+                            {% if r.subquestion %}
+                                سوال {{ r.subquestion.question.number }} - بخش {{ r.subquestion.number }}
+                            {% else %}
+                                سوال {{ r.question.number }}
+                            {% endif %}
+                        </div>
+
+                        <div class="status-btn-group" data-result-id="{{ r.id }}">
+                            <button type="button" class="status-dot dot-success {% if r.is_correct %}active{% endif %}" data-value="true">
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                            <button type="button" class="status-dot dot-warning" data-value="false">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <button type="button" class="status-dot dot-error {% if not r.is_correct %}active{% endif %}" data-value="false">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <input type="checkbox" 
+                           name="result_{{ r.id }}" 
+                           id="check-{{ r.id }}" 
+                           class="hidden-check" 
+                           {% if r.is_correct %}checked{% endif %}>
+                </div>
+                
+                {% if not forloop.last %}<div class="divider"></div>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button type="submit" class="btn-submit" style="padding: 12px 60px; border-radius: 50px; background: var(--primary); color: white; border: none; cursor: pointer; font-weight: bold;">
+                <i class="fa-solid fa-save"></i> ذخیره تغییرات
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const groups = document.querySelectorAll(".status-btn-group");
+
+        groups.forEach((group) => {
+            const resultId = group.getAttribute('data-result-id');
+            const checkbox = document.getElementById(`check-${resultId}`);
+            const btns = group.querySelectorAll(".status-dot");
+
+            btns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    // تغییر حالت فعال دکمه‌ها
+                    btns.forEach((b) => b.classList.remove("active"));
+                    btn.classList.add("active");
+
+                    // به‌روزرسانی مقدار چک‌باکس مخفی
+                    const isCorrect = btn.getAttribute('data-value') === "true";
+                    checkbox.checked = isCorrect;
+                    
+                    console.log(`نتیجه سوال ${resultId}:`, checkbox.checked);
+                });
+            });
+        });
+    });
+</script>
+
+{% endblock %}

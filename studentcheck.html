@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پنل تصحیح آزمون</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/studentcheck.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-content" style="width: 900px">
+      <header class="header-container">
+        <a href="#" class="back-btn">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <div class="page-titles">
+          <h1>تصحیح آزمون ورودی</h1>
+          <p>لطفاً نمرات را با دقت وارد نمایید</p>
+        </div>
+      </header>
+
+      <div class="student-card">
+        <div class="student-name-section">
+          <h2 class="q-number-pill" style="width: 400px">نام دانش اموز</h2>
+        </div>
+
+        <div class="questions-wrapper">
+          <div>
+            <div class="question-box">
+              <div class="q-number-pill">سوال ۲</div>
+
+              <div class="status-btn-group">
+                <button class="status-dot dot-success">
+                  <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="status-dot dot-warning">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <button class="status-dot dot-error active">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <!--چک باکس نتیجه سوال-->
+          <input
+            type="checkbox"
+            style="appearance: none"
+            value="false"
+            id="quest-res"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      // اسکریپت ساده برای فعال/غیرفعال کردن دکمه‌ها جهت نمایش
+      const allGroups = document.querySelectorAll(
+        ".simple-answer-row, .status-btn-group",
+      );
+      const checkbox = document.getElementById("quest-res");
+
+      allGroups.forEach((group) => {
+        const btns = group.querySelectorAll(".status-dot");
+        btns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            btns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            if (btn.className.includes("dot-success")) {
+              checkbox.checked = true;
+            } else {
+              checkbox.checked = false;
+            }
+            console.log(checkbox.checked);
+          });
+        });
+      });
+    </script>
+    <script src="js/layout.js"></script>
+  </body>
+</html>

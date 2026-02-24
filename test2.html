@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه مدار تکنولوژی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* تنظیمات کلی صفحه و فونت */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            /* گرادینت پس‌زمینه شبیه به عکس */
+            background: linear-gradient(180deg, #2bc0e4 0%, #1a1a2e 100%);
+            font-family: Tahoma, sans-serif;
+            overflow: hidden; /* حذف اسکرول */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* --- نوار جستجو بالا --- */
+        .top-bar {
+            position: absolute;
+            top: 20px;
+            width: 90%;
+            max-width: 800px;
+            height: 50px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .search-indicator {
+            height: 100%;
+            width: 15%;
+            background: #2bc0e4;
+            border-radius: 20px;
+        }
+
+        /* --- نگهدارنده اصلی مدار --- */
+        .circuit-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            /* برای دیدن محدوده در زمان طراحی میتوانید بوردر موقت بدهید */
+        }
+
+        /* --- تنظیمات خطوط پشت (SVG) --- */
+        .lines-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* زیر دایره‌ها */
+            pointer-events: none; /* کلیک روی خطوط تاثیری نداشته باشد */
+        }
+
+        .circuit-line {
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.8;
+        }
+
+        /* --- استایل دایره‌ها (Nodes) --- */
+        .node {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* روی خطوط */
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            /* انیمیشن نرم برای بزرگ شدن */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        }
+
+        .node i {
+            color: #1a1a2e; /* رنگ آیکون */
+            transition: transform 0.4s ease;
+        }
+
+        /* حالت هاور (بزرگ شدن دایره و آیکون) */
+        .node:hover {
+            transform: scale(1.3); /* ۳۰ درصد بزرگتر */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+            z-index: 10; /* بیاید روی همه چیز */
+        }
+
+        .node:hover i {
+            transform: rotate(360deg); /* چرخش آیکون هنگام هاور */
+        }
+
+        /* --- سایزهای مختلف دایره‌ها --- */
+        .node.large {
+            width: 180px;
+            height: 180px;
+            font-size: 3rem; /* سایز آیکون */
+            /* مرکز قرار دادن دایره اصلی */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+        }
+        /* چون دایره اصلی ترنسفرم پیشفرض دارد، باید هاور آن را جدا تعریف کنیم تا خراب نشود */
+        .node.large:hover {
+            transform: translate(-50%, -50%) scale(1.15);
+        }
+
+        .node.medium {
+            width: 80px;
+            height: 80px;
+            font-size: 1.5rem;
+        }
+
+        .node.small {
+            width: 40px;
+            height: 40px;
+            font-size: 0; /* دایره‌های کوچک آیکون ندارند یا خیلی ریز است */
+            border: 2px solid white;
+            background: #1a1a2e; /* تو خالی بنظر برسند */
+        }
+
+        /* --- موقعیت‌دهی دستی دایره‌ها (بر اساس درصد) --- */
+        /* سمت راست */
+        .n1 { top: 20%; right: 10%; }
+        .n2 { top: 50%; right: 5%; }
+        .n3 { bottom: 20%; right: 15%; }
+        
+        /* سمت چپ */
+        .n4 { top: 25%; left: 15%; }
+        .n5 { bottom: 30%; left: 10%; }
+        .n6 { bottom: 10%; left: 25%; }
+
+        /* دایره‌های کوچک تزیینی */
+        .s1 { top: 15%; right: 25%; }
+        .s2 { top: 35%; left: 5%; }
+        .s3 { bottom: 10%; right: 40%; }
+
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="search-indicator"></div>
+    </div>
+
+    <div class="circuit-container">
+
+        <svg class="lines-svg" viewBox="0 0 800 600">
+            <path class="circuit-line" d="M400,300 L550,300 L550,160 L680,160" />
+            
+            <path class="circuit-line" d="M490,300 L650,300 L720,300" />
+            
+            <path class="circuit-line" d="M310,300 L250,300 L250,190 L160,190" />
+            
+            <path class="circuit-line" d="M350,350 L250,450 L120,450" />
+
+            <polyline class="circuit-line" points="100,100 200,100 200,150 250,150" />
+            <polyline class="circuit-line" points="700,500 600,500 600,450 500,450" />
+            <polyline class="circuit-line" points="50,300 100,300 100,500 200,500" />
+        </svg>
+
+        <div class="node large">
+            <i class="fas fa-microchip"></i>
+        </div>
+
+        <div class="node medium n1"><i class="fas fa-network-wired"></i></div>
+        <div class="node medium n2"><i class="fas fa-database"></i></div>
+        <div class="node medium n3"><i class="fas fa-robot"></i></div>
+        <div class="node medium n4"><i class="fas fa-code"></i></div>
+        <div class="node medium n5"><i class="fas fa-shield-alt"></i></div>
+        <div class="node medium n6"><i class="fas fa-globe"></i></div>
+
+        <div class="node small s1"></div>
+        <div class="node small s2"></div>
+        <div class="node small s3"></div>
+
+    </div>
+
+</body>
+</html>

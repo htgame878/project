@@ -4,8 +4,7 @@ function createSidebar() {
   const sidebar = document.createElement("div");
   sidebar.className = "sidebar";
 
-  // تشخیص اینکه الان در کدام صفحه هستیم برای اکتیو کردن منو
-  const path = window.location.pathname;
+  
 
   sidebar.innerHTML = `
         <a href="index.html">
@@ -38,10 +37,15 @@ function createSidebar() {
                 <img class="icon-template" src="icon/یادداشت ها.svg" />
  یادداشت ها
               </a>
+              <a href="settings.html" class="nav-item ">
+                <img class="icon-template" src="icon/ربات.png" />
+ ربات هوشمند
+            </a>
             <a href="settings.html" class="nav-item ">
                 <img class="icon-template" src="icon/تنظیمات.svg" />
  تنظیمات
             </a>
+            
             <a href="index.html" class="nav-item" style="justify-content: center;">
                  بازگشت به خانه
             </a>

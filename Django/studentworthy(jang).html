@@ -1,0 +1,72 @@
+{% extends 'Profile/base.html' %}
+{% load static %}
+
+{% block title %}نتایج آزمون - طراحی مدرن{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/studentworthy.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .studentworthy-container { padding: 20px; }
+    .page-actions { margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="main-content studentworthy-container">
+
+  {% for student, results in student_results.items %}
+    <div class="student-card">
+      <div class="name-header">{{ student.full_name }}</div>
+
+      {% for r in results %}
+      <div class="results-strip">
+        <div class="results-strip">
+
+        {% if r.subquestion %}
+          {# زیرسؤال داریم: شماره سوال اصلی از خود subquestion.question میاد #}
+          {% with qn=r.subquestion.question.number|default:r.subquestion.question.id %}
+            {% with sqn=r.subquestion.number|default:r.subquestion.id %}
+            {% for s in r.subquestion %}
+              <div class="q-item">
+                <span class="q-num">سوال {{ qn }} </span>
+                <div class="status-pill {% if r.is_correct %}green{% else %}red{% endif %}"></div>
+              </div>
+            {% endfor %}
+            {% endwith %}
+          {% endwith %}
+
+        {% elif r.question %}
+          {# سوال معمولی #}
+          {% with qn=r.question.number|default:r.question.id %}
+            <div class="q-item">
+              <span class="q-num">سوال {{ qn }}</span>
+              <div class="status-pill {% if r.is_correct %}green{% else %}red{% endif %}"></div>
+            </div>
+          {% endwith %}
+
+        {% else %}
+          {# fallback نهایی #}
+          <div class="q-item">
+            <span class="q-num">سوال نامشخص</span>
+            <div class="status-pill {% if r.is_correct %}green{% else %}red{% endif %}"></div>
+          </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+          </div>
+
+        </div>
+  {% empty %}
+    <p style="text-align:center; color:#666;">هیچ نتیجه‌ای یافت نشد.</p>
+  {% endfor %}
+
+  {# ✅ دکمه‌ها فقط یک بار، بیرون حلقه #}
+  <div class="page-actions">
+    <a class="btn-primary-full" href="{% url 'exam_summary' exam.id %}">بازگشت به خلاصه آزمون</a>
+    <a class="btn-primary-full" href="{% url 'exam_snapshot_create' exam.id %}">تبدیل به جیسون</a>
+  </div>
+
+</div>
+{% endblock %}

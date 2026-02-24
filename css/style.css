@@ -5,6 +5,8 @@
     --text-default:#fff;
     --text-alter:#ededed;
     --sidebar-width: 260px;
+    --bg-title-card:#cbd5e1;
+    --secondary: #f1f5f9;
     
 }
 @font-face {
@@ -19,7 +21,33 @@
 * { box-sizing: border-box; margin: 0; padding: 0; font-family:  'Inter','Estedad'; text-decoration: none; }
 
 body {  background: var(--bg-body);background-image: url("../images/8.svg") ;background-repeat: no-repeat; background-size: cover; direction: rtl; }
-
+.flowRobat{
+    position: fixed;
+    background-color: var(--primary);
+    padding: 1rem;
+    z-index: 9999;
+    border-radius: 300px;
+    bottom: 2rem;
+    left: 2rem;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.flowRobat:hover{
+    transform: translate(5px ,0);
+    -webkit-transform: translate(5px ,0);
+    -moz-transform: translate(5px ,0);
+    -ms-transform: translate(5px ,0);
+    -o-transform: translate(5px ,0);
+    box-shadow: 0 0 0 10px #eee;
+}
 /* تیتر اصلی */
 .main-title {
     font-size: 32px;
